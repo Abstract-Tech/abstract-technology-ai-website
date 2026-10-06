@@ -1,0 +1,20 @@
+{
+  "siteName": "Abstract Technology AI",
+  "pages": {
+    "/": {
+      "title": "Abstract Technology AI | Practical AI Products",
+      "description": "Abstract Technology GmbH builds focused AI products, including an AI Assistant for Open edX and AI Studio.",
+      "image": "/og/studio.jpg"
+    },
+    "/assistant": {
+      "title": "AI Assistant for Open edX | Abstract Technology AI",
+      "description": "An AI assistant created for the Open edX learning environment, by Abstract Technology GmbH.",
+      "image": "/og/assistant.jpg"
+    },
+    "/studio": {
+      "title": "AI Studio | Abstract Technology AI",
+      "description": "The place for Abstract Technology's AI tools, product stories, and future direction.",
+      "image": "/og/studio.jpg"
+    }
+  }
+}
