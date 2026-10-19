@@ -1,7 +1,7 @@
 import { ArrowDownRight, ArrowRight } from "lucide-react";
 import { createFileRoute } from "@tanstack/react-router";
 
-import studioImage from "@/assets/ai-studio-editorial.jpg";
+import studioImage from "@/assets/ai-studio-openedx.webp";
 import { pageHead } from "@/lib/seo";
 import { PageShell, ProductNumber } from "@/components/site-layout";
 import { Button } from "@/components/ui/button";

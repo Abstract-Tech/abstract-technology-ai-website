@@ -1,7 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 
 const MAIN_SITE = "https://abstract-technology.de";
-import logo from "@/assets/abstract-logo-white.png";
+import logo from "@/assets/abstract-technology-logo.png";
 import type { ReactNode } from "react";
 
 import { Button } from "@/components/ui/button";

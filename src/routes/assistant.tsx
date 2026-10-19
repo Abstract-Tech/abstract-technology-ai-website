@@ -1,7 +1,7 @@
 import { ArrowDownRight, ArrowRight } from "lucide-react";
 import { createFileRoute } from "@tanstack/react-router";
 
-import assistantImage from "@/assets/open-edx-assistant-editorial.jpg";
+import assistantImage from "@/assets/ai-assistant-openedx.webp";
 import { pageHead } from "@/lib/seo";
 import { PageShell, ProductNumber } from "@/components/site-layout";
 import { Button } from "@/components/ui/button";
