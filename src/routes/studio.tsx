@@ -1,7 +1,7 @@
 import { ArrowDownRight, ArrowRight } from "lucide-react";
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 
-import studioImage from "@/assets/ai-studio-editorial.jpg";
+import studioImage from "@/assets/ai-studio-openedx.webp";
 import { pageHead } from "@/lib/seo";
 import { PageShell, ProductNumber } from "@/components/site-layout";
 import { Button } from "@/components/ui/button";
@@ -29,7 +29,7 @@ function StudioPage() {
         </figure>
       </section>
 
-      <section className="border-y border-border bg-surface py-20 md:py-28">
+      <section className="border-y border-border bg-surface py-14 md:py-20">
         <div className="site-shell editorial-grid">
           <div><ProductNumber>Its role</ProductNumber><p className="section-index">01</p></div>
           <div>
@@ -41,7 +41,7 @@ function StudioPage() {
         </div>
       </section>
 
-      <section className="site-shell py-20 md:py-28">
+      <section className="site-shell py-16 md:py-24">
         <div className="editorial-grid">
           <div><ProductNumber>What belongs here</ProductNumber><p className="section-index">02</p></div>
           <div className="divide-y divide-border border-y border-border">
@@ -50,7 +50,7 @@ function StudioPage() {
               ["Thinking", "The intent, context, and principles that shape each product direction."],
               ["What’s next", "A place for the company’s AI portfolio to evolve without overpromising the future."],
             ].map(([title, copy], index) => (
-              <div key={title} className="grid gap-3 py-8 sm:grid-cols-[4rem_1fr_1.5fr] sm:items-start">
+              <div key={title} className="grid gap-3 py-6 sm:grid-cols-[4rem_1fr_1.5fr] sm:items-start">
                 <span className="text-sm text-muted-foreground">0{index + 1}</span>
                 <h3 className="font-display text-2xl">{title}</h3>
                 <p className="text-muted-foreground">{copy}</p>
@@ -61,13 +61,13 @@ function StudioPage() {
       </section>
 
       <section className="bg-accent py-16 text-accent-foreground md:py-20">
-        <div className="site-shell flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+        <div className="site-shell flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-accent-foreground/65">First from the studio</p>
             <h2 className="mt-4 max-w-2xl font-display text-4xl md:text-6xl">Meet the AI Assistant for Open edX.</h2>
           </div>
           <Button asChild size="lg" className="h-12 shrink-0 rounded-none bg-foreground text-background hover:bg-foreground/90">
-            <Link to="/assistant">Explore the assistant <ArrowRight aria-hidden="true" /></Link>
+            <a href="https://abstract-technology.de/ai-assistant-openedx" target="_blank" rel="noopener noreferrer">Explore the assistant <ArrowRight aria-hidden="true" /></a>
           </Button>
         </div>
       </section>
