@@ -29,7 +29,7 @@ function AssistantPage() {
         </figure>
       </section>
 
-      <section className="border-y border-border bg-surface py-20 md:py-28">
+      <section className="border-y border-border bg-surface py-14 md:py-20">
         <div className="site-shell editorial-grid">
           <div>
             <ProductNumber>The premise</ProductNumber>
@@ -44,15 +44,15 @@ function AssistantPage() {
         </div>
       </section>
 
-      <section className="site-shell py-20 md:py-28">
+      <section className="site-shell py-16 md:py-24">
         <div className="editorial-grid">
           <div><ProductNumber>Point of view</ProductNumber><p className="section-index">02</p></div>
           <div className="grid gap-px border border-border bg-border md:grid-cols-2">
-            <div className="bg-background p-7 md:p-10">
+            <div className="bg-background p-6 md:p-8">
               <h3 className="font-display text-3xl">Context first</h3>
               <p className="mt-4 text-muted-foreground">Built around a real education platform and the people already using it.</p>
             </div>
-            <div className="bg-background p-7 md:p-10">
+            <div className="bg-background p-6 md:p-8">
               <h3 className="font-display text-3xl">Useful by design</h3>
               <p className="mt-4 text-muted-foreground">A product direction grounded in practical assistance, clarity, and thoughtful integration.</p>
             </div>
@@ -61,7 +61,7 @@ function AssistantPage() {
       </section>
 
       <section className="bg-primary py-16 text-primary-foreground md:py-20">
-        <div className="site-shell flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+        <div className="site-shell flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary-foreground/70">Continue exploring</p>
             <h2 className="mt-4 max-w-2xl font-display text-4xl md:text-6xl">See the studio behind our AI product work.</h2>

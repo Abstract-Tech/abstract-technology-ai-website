@@ -32,7 +32,7 @@ function Index() {
       </section>
 
       <section className="border-y border-border" aria-labelledby="products-title">
-        <div className="site-shell py-7">
+        <div className="site-shell py-5">
           <div className="flex items-center justify-between gap-6">
             <h2 id="products-title" className="text-xs font-semibold uppercase tracking-[0.16em]">Current products</h2>
             <span className="text-xs text-muted-foreground">Two tools. One direction.</span>
@@ -41,7 +41,7 @@ function Index() {
         <div className="site-shell grid gap-px border-x border-border bg-border lg:grid-cols-2">
           <article className="product-panel bg-background">
             <div className="product-image-wrap"><img src={assistantImage} alt="AI learning companion on a smartphone beside a notebook" width={1080} height={655} /></div>
-            <div className="p-7 md:p-10">
+            <div className="p-6 md:p-8">
               <ProductNumber>01 / Learning</ProductNumber>
               <h3 className="mt-5 font-display text-4xl md:text-5xl">AI Assistant<br /><em>for Open edX</em></h3>
               <p className="mt-5 max-w-md text-muted-foreground">A focused AI companion conceived for the Open edX learning environment.</p>
@@ -50,7 +50,7 @@ function Index() {
           </article>
           <article className="product-panel bg-background">
             <div className="product-image-wrap"><img src={studioImage} alt="AI Studio course creation tools displayed over a laptop" width={1323} height={800} loading="lazy" /></div>
-            <div className="p-7 md:p-10">
+            <div className="p-6 md:p-8">
               <ProductNumber>02 / Platform</ProductNumber>
               <h3 className="mt-5 font-display text-4xl md:text-5xl">AI Studio<br /><em>by Abstract</em></h3>
               <p className="mt-5 max-w-md text-muted-foreground">The place where our AI tools are introduced, explained, and connected.</p>
@@ -60,7 +60,7 @@ function Index() {
         </div>
       </section>
 
-      <section className="bg-surface py-20 md:py-32">
+      <section className="bg-surface py-16 md:py-24">
         <div className="site-shell editorial-grid">
           <div><ProductNumber>The company</ProductNumber><p className="section-index">AT</p></div>
           <div>
@@ -73,7 +73,7 @@ function Index() {
         </div>
       </section>
 
-      <section className="site-shell py-20 md:py-28">
+      <section className="site-shell py-16 md:py-24">
         <div className="border-t border-foreground pt-7">
           <ProductNumber>Start exploring</ProductNumber>
           <div className="mt-8 flex flex-col gap-7 md:flex-row md:items-end md:justify-between">

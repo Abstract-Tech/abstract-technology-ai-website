@@ -176,7 +176,7 @@
   .nav-link:hover, .nav-link-active { border-color: var(--color-foreground); color: var(--color-foreground); }
   .footer-link { color: var(--color-muted-foreground); transition: color 180ms ease; }
   .footer-link:hover { color: var(--color-foreground); }
-  .home-hero { display: grid; min-height: calc(88svh - 5rem); align-items: end; gap: 3rem; padding-block: clamp(4rem, 10vw, 8rem) 4rem; }
+  .home-hero { display: grid; align-items: start; gap: 2.25rem; padding-block: clamp(3rem, 6vw, 5rem) 3rem; }
   .home-title { max-width: 10ch; font-family: var(--font-display); font-size: clamp(4.5rem, 12vw, 10rem); font-weight: 400; line-height: 0.88; letter-spacing: 0; }
   .home-title em, .display-title em, .section-title em { color: var(--color-primary); font-weight: 400; }
   .hero-aside { border-top: 1px solid var(--color-foreground); padding-top: 1.5rem; }
@@ -184,11 +184,11 @@
   .product-image-wrap { aspect-ratio: 4 / 3; overflow: hidden; }
   .product-image-wrap img, .editorial-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 700ms cubic-bezier(.2,.7,.2,1); }
   .product-panel:hover .product-image-wrap img { transform: scale(1.025); }
-  .editorial-grid { display: grid; gap: 3rem; }
+  .editorial-grid { display: grid; gap: 2.25rem; }
   .section-index { margin-top: 1.5rem; font-family: var(--font-display); font-size: 4rem; color: var(--color-border); }
   .section-title { max-width: 14ch; font-family: var(--font-display); font-size: clamp(2.8rem, 6vw, 5.5rem); font-weight: 400; line-height: 0.98; letter-spacing: 0; }
   .body-large { font-size: clamp(1.15rem, 2vw, 1.5rem); line-height: 1.55; }
-  .page-intro { display: grid; gap: 3rem; padding-block: clamp(3.5rem, 8vw, 7rem); }
+  .page-intro { display: grid; gap: 2.25rem; padding-block: clamp(2.75rem, 6vw, 5rem); }
   .intro-copy { align-self: center; }
   .display-title { max-width: 12ch; font-family: var(--font-display); font-size: clamp(3.5rem, 7vw, 7rem); font-weight: 400; line-height: 0.9; letter-spacing: 0; }
   .intro-lede { margin-top: 2rem; max-width: 32rem; font-size: 1.15rem; line-height: 1.65; color: var(--color-muted-foreground); }
