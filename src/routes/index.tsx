@@ -1,8 +1,8 @@
 import { ArrowDownRight, ArrowRight } from "lucide-react";
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 
-import assistantImage from "@/assets/open-edx-assistant-editorial.jpg";
-import studioImage from "@/assets/ai-studio-editorial.jpg";
+import assistantImage from "@/assets/at-ai-assistant1.webp";
+import studioImage from "@/assets/at-ai-studio-4.webp";
 import { pageHead } from "@/lib/seo";
 import { PageShell, ProductLink, ProductNumber } from "@/components/site-layout";
 import { Button } from "@/components/ui/button";
@@ -24,7 +24,7 @@ function Index() {
           <p className="max-w-md text-lg leading-relaxed text-muted-foreground">
             We are building a focused portfolio of AI products, beginning with tools for learning and the studio that gives them a voice.
           </p>
-          <a href="https://abstract-technology.de" rel="noopener" className="mt-6 inline-block text-sm font-semibold underline underline-offset-4 hover:text-primary">
+          <a href="https://abstract-technology.de/about" target="_blank" rel="noopener noreferrer" className="mt-6 inline-block text-sm font-semibold underline underline-offset-4 hover:text-primary">
             From the team behind abstract-technology.de
           </a>
           <ArrowDownRight className="mt-10 size-9 text-accent" aria-hidden="true" />
@@ -40,7 +40,7 @@ function Index() {
         </div>
         <div className="site-shell grid gap-px border-x border-border bg-border lg:grid-cols-2">
           <article className="product-panel bg-background">
-            <div className="product-image-wrap"><img src={assistantImage} alt="Layered blue glass forms suggesting connected knowledge" width={1600} height={1200} /></div>
+            <div className="product-image-wrap"><img src={assistantImage} alt="AI learning companion on a smartphone beside a notebook" width={1080} height={655} /></div>
             <div className="p-7 md:p-10">
               <ProductNumber>01 / Learning</ProductNumber>
               <h3 className="mt-5 font-display text-4xl md:text-5xl">AI Assistant<br /><em>for Open edX</em></h3>
@@ -49,7 +49,7 @@ function Index() {
             </div>
           </article>
           <article className="product-panel bg-background">
-            <div className="product-image-wrap"><img src={studioImage} alt="A modular studio workspace with blue and coral forms" width={1600} height={1200} loading="lazy" /></div>
+            <div className="product-image-wrap"><img src={studioImage} alt="AI Studio course creation tools displayed over a laptop" width={1323} height={800} loading="lazy" /></div>
             <div className="p-7 md:p-10">
               <ProductNumber>02 / Platform</ProductNumber>
               <h3 className="mt-5 font-display text-4xl md:text-5xl">AI Studio<br /><em>by Abstract</em></h3>
@@ -79,7 +79,7 @@ function Index() {
           <div className="mt-8 flex flex-col gap-7 md:flex-row md:items-end md:justify-between">
             <h2 className="max-w-3xl font-display text-5xl leading-[0.98] md:text-7xl">Two starting points for what comes next.</h2>
             <Button asChild variant="outline" size="lg" className="h-12 shrink-0 rounded-none">
-              <Link to="/assistant">View first product <ArrowRight aria-hidden="true" /></Link>
+              <a href="https://abstract-technology.de/core-platform" target="_blank" rel="noopener noreferrer">View products <ArrowRight aria-hidden="true" /></a>
             </Button>
           </div>
         </div>

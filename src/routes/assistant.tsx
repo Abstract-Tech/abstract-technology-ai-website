@@ -1,5 +1,5 @@
 import { ArrowDownRight, ArrowRight } from "lucide-react";
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 
 import assistantImage from "@/assets/open-edx-assistant-editorial.jpg";
 import { pageHead } from "@/lib/seo";
@@ -67,7 +67,7 @@ function AssistantPage() {
             <h2 className="mt-4 max-w-2xl font-display text-4xl md:text-6xl">See the studio behind our AI product work.</h2>
           </div>
           <Button asChild size="lg" variant="secondary" className="h-12 shrink-0 rounded-none">
-            <Link to="/studio">Visit AI Studio <ArrowRight aria-hidden="true" /></Link>
+            <a href="https://abstract-technology.de/ai-studio-openedx" target="_blank" rel="noopener noreferrer">Visit AI Studio <ArrowRight aria-hidden="true" /></a>
           </Button>
         </div>
       </section>

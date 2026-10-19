@@ -1,5 +1,5 @@
 import { ArrowDownRight, ArrowRight } from "lucide-react";
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 
 import studioImage from "@/assets/ai-studio-editorial.jpg";
 import { pageHead } from "@/lib/seo";
@@ -67,7 +67,7 @@ function StudioPage() {
             <h2 className="mt-4 max-w-2xl font-display text-4xl md:text-6xl">Meet the AI Assistant for Open edX.</h2>
           </div>
           <Button asChild size="lg" className="h-12 shrink-0 rounded-none bg-foreground text-background hover:bg-foreground/90">
-            <Link to="/assistant">Explore the assistant <ArrowRight aria-hidden="true" /></Link>
+            <a href="https://abstract-technology.de/ai-assistant-openedx" target="_blank" rel="noopener noreferrer">Explore the assistant <ArrowRight aria-hidden="true" /></a>
           </Button>
         </div>
       </section>
