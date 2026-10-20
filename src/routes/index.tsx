@@ -17,15 +17,18 @@ function Index() {
     <PageShell>
       <section className="site-shell home-hero">
         <div className="reveal">
-          <ProductNumber>Abstract Technology GmbH / AI practice</ProductNumber>
+          <ProductNumber>Abstract-Technology GmbH / AI for the Open edX® platform</ProductNumber>
           <h1 className="home-title mt-8">We make AI<br /><em>useful.</em></h1>
+          <p className="max-w-2xl text-lg leading-relaxed text-muted-foreground">
+            Explainable, GDPR-compliant AI for the Open edX® platform – for LMS administration and AI course authoring, built and hosted in Europe.
+          </p>
         </div>
         <div className="hero-aside reveal reveal-delay">
           <p className="max-w-md text-lg leading-relaxed text-muted-foreground">
-            We are building a focused portfolio of AI products, beginning with tools for learning and the studio that gives them a voice.
+            Abstract-Technology builds focused AI products for the Open edX® platform: the <strong className="text-foreground">AI Assistant</strong>, which manages your learning platform through natural-language conversation, and <strong className="text-foreground">AI Studio</strong>, which turns a single prompt into a complete online course. Hosted on EU servers, aligned with the EU AI Act.
           </p>
           <a href="https://abstract-technology.de/about" target="_blank" rel="noopener noreferrer" className="mt-6 inline-block text-sm font-semibold underline underline-offset-4 hover:text-primary">
-            From the team behind abstract-technology.de
+            By Abstract-Technology, certified partner for the Open edX® platform in Europe
           </a>
           <ArrowDownRight className="mt-10 size-9 text-accent" aria-hidden="true" />
         </div>
@@ -34,27 +37,27 @@ function Index() {
       <section className="border-y border-border" aria-labelledby="products-title">
         <div className="site-shell py-5">
           <div className="flex items-center justify-between gap-6">
-            <h2 id="products-title" className="text-xs font-semibold uppercase tracking-[0.16em]">Current products</h2>
-            <span className="text-xs text-muted-foreground">Two tools. One direction.</span>
+            <h2 id="products-title" className="text-xs font-semibold uppercase tracking-[0.16em]">AI products for the Open edX® platform</h2>
+            <span className="text-xs text-muted-foreground">Two tools. One platform. Less manual work.</span>
           </div>
         </div>
         <div className="site-shell grid gap-px border-x border-border bg-border lg:grid-cols-2">
           <article className="product-panel bg-background">
             <div className="product-image-wrap"><img src={assistantImage} alt="AI learning companion on a smartphone beside a notebook" width={1080} height={655} /></div>
             <div className="p-6 md:p-8">
-              <ProductNumber>01 / Learning</ProductNumber>
-              <h3 className="mt-5 font-display text-4xl md:text-5xl">AI Assistant<br /><em>for Open edX</em></h3>
-              <p className="mt-5 max-w-md text-muted-foreground">A focused AI companion conceived for the Open edX learning environment.</p>
-              <div className="mt-8"><ProductLink to="/assistant">Explore the assistant</ProductLink></div>
+              <ProductNumber>01 / LMS administration</ProductNumber>
+              <h3 className="mt-5 font-display text-4xl md:text-5xl">AI Assistant<br /><em>for the Open edX® platform</em></h3>
+              <p className="mt-5 max-w-md text-muted-foreground">A conversational AI assistant embedded in the LMS and Studio of the Open edX® platform. Learners, instructors and administrators manage enrolments, grades, deadlines, certificates and course audits in plain language – every change previewed and confirmed by a human.</p>
+              <div className="mt-8"><ProductLink to="/assistant">Explore the AI Assistant</ProductLink></div>
             </div>
           </article>
           <article className="product-panel bg-background">
             <div className="product-image-wrap"><img src={studioImage} alt="AI Studio course creation tools displayed over a laptop" width={1323} height={800} loading="lazy" /></div>
             <div className="p-6 md:p-8">
-              <ProductNumber>02 / Platform</ProductNumber>
-              <h3 className="mt-5 font-display text-4xl md:text-5xl">AI Studio<br /><em>by Abstract</em></h3>
-              <p className="mt-5 max-w-md text-muted-foreground">The place where our AI tools are introduced, explained, and connected.</p>
-              <div className="mt-8"><ProductLink to="/studio">Enter the studio</ProductLink></div>
+              <ProductNumber>02 / AI course authoring</ProductNumber>
+              <h3 className="mt-5 font-display text-4xl md:text-5xl">AI Studio<br /><em>for the Open edX® platform</em></h3>
+              <p className="mt-5 max-w-md text-muted-foreground">An AI course authoring tool for instructional designers. Turn one prompt into a complete course with Bloom's-aligned learning objectives and assessments, then export it to the Open edX® platform in one click. Up to 60% faster course development.</p>
+              <div className="mt-8"><ProductLink to="/studio">Explore AI Studio</ProductLink></div>
             </div>
           </article>
         </div>
@@ -62,12 +65,12 @@ function Index() {
 
       <section className="bg-surface py-16 md:py-24">
         <div className="site-shell editorial-grid">
-          <div><ProductNumber>The company</ProductNumber><p className="section-index">AT</p></div>
+          <div><ProductNumber>About Abstract-Technology</ProductNumber><p className="section-index">AT</p></div>
           <div>
             <h2 className="section-title">Technology is abstract.<br /><em>Its value should not be.</em></h2>
             <div className="mt-10 grid gap-8 border-t border-border pt-8 md:grid-cols-2">
-              <p className="body-large">Abstract Technology GmbH turns emerging technology into focused products with a clear place in people’s work and learning.</p>
-              <p className="text-muted-foreground">Our current work starts with AI for education and a dedicated studio for sharing the products and ideas that follow. We are building deliberately: one useful product at a time.</p>
+              <p className="body-large">Abstract-Technology GmbH is a Berlin-based certified partner for the Open edX® platform. We build, host and maintain learning platforms for universities, public institutions, enterprises and NGOs across Europe – and bring that experience to AI for education.</p>
+              <p className="text-muted-foreground">Our AI products follow the same principles as our learning platforms: hosting on EU servers in Germany, GDPR compliance, your choice of language model – including self-hosted models – and no vendor lock-in. Every AI recommendation is grounded in Bloom's Taxonomy, fully auditable and aligned with the EU AI Act. We build deliberately: one useful product at a time.</p>
             </div>
           </div>
         </div>
@@ -75,11 +78,11 @@ function Index() {
 
       <section className="site-shell py-16 md:py-24">
         <div className="border-t border-foreground pt-7">
-          <ProductNumber>Start exploring</ProductNumber>
+            <ProductNumber>Start exploring</ProductNumber>
           <div className="mt-8 flex flex-col gap-7 md:flex-row md:items-end md:justify-between">
-            <h2 className="max-w-3xl font-display text-5xl leading-[0.98] md:text-7xl">Two starting points for what comes next.</h2>
-            <Button asChild variant="outline" size="lg" className="h-12 shrink-0 rounded-none">
-              <a href="https://abstract-technology.de/core-platform" target="_blank" rel="noopener noreferrer">View products <ArrowRight aria-hidden="true" /></a>
+            <div className="max-w-3xl"><h2 className="font-display text-5xl leading-[0.98] md:text-7xl">Two starting points for AI on the Open edX® platform.</h2><p className="mt-5 text-muted-foreground">See the AI Assistant and AI Studio live in a 45-minute demo – no sales deck, just the Abstract-Technology architects who build and run the Open edX® platform every day.</p></div>
+            <Button asChild variant="outline" size="lg" className="w-full h-12 shrink-0 rounded-none sm:w-auto">
+              <a href="https://abstract-technology.de/contact" target="_blank" rel="noopener noreferrer">Book a live demo <ArrowRight aria-hidden="true" /></a>
             </Button>
           </div>
         </div>

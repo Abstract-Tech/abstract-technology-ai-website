@@ -66,7 +66,7 @@ function AssistantPage() {
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary-foreground/70">Continue exploring</p>
             <h2 className="mt-4 max-w-2xl font-display text-4xl md:text-6xl">See the studio behind our AI product work.</h2>
           </div>
-          <Button asChild size="lg" variant="secondary" className="h-12 shrink-0 rounded-none">
+          <Button asChild size="lg" variant="secondary" className="w-full h-12 shrink-0 rounded-none sm:w-auto">
             <a href="https://abstract-technology.de/ai-studio-openedx" target="_blank" rel="noopener noreferrer">Visit AI Studio <ArrowRight aria-hidden="true" /></a>
           </Button>
         </div>

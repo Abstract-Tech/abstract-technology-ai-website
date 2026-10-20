@@ -1,4 +1,5 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
+import { useState } from "react";
 
 const MAIN_SITE = "https://abstract-technology.de";
 import logo from "@/assets/abstract-technology-logo.png";
@@ -15,18 +16,30 @@ export function BrandMark() {
 }
 
 export function SiteHeader() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <header className="border-b border-border bg-background/95">
       <div className="site-shell flex min-h-20 flex-wrap items-center justify-between gap-5 py-3">
         <BrandMark />
-        <nav aria-label="Primary navigation" className="flex flex-wrap items-center gap-1 sm:gap-3">
-          <a href={`${MAIN_SITE}/ai-assistant-openedx`} target="_blank" rel="noopener noreferrer" className="nav-link">AI-Assistant</a>
-          <a href={`${MAIN_SITE}/ai-studio-openedx`} target="_blank" rel="noopener noreferrer" className="nav-link">AI-Studio</a>
-          <a href={`${MAIN_SITE}/`} className="nav-link hidden sm:inline-block" target="_blank" rel="noopener noreferrer">
+        <button
+          type="button"
+          className="mobile-menu-toggle"
+          aria-expanded={menuOpen}
+          aria-controls="site-navigation"
+          aria-label={menuOpen ? "Close navigation" : "Open navigation"}
+          onClick={() => setMenuOpen((open) => !open)}
+        >
+          {menuOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
+        </button>
+        <nav id="site-navigation" aria-label="Primary navigation" className={`site-nav flex flex-wrap items-center gap-1 sm:gap-3${menuOpen ? " is-open" : ""}`}>
+          <a href={`${MAIN_SITE}/ai-assistant-openedx`} target="_blank" rel="noopener noreferrer" className="nav-link">AI Assistant</a>
+          <a href={`${MAIN_SITE}/ai-studio-openedx`} target="_blank" rel="noopener noreferrer" className="nav-link">AI Studio</a>
+          <a href={`${MAIN_SITE}/`} className="nav-link" target="_blank" rel="noopener noreferrer">
             abstract-technology.de <ArrowUpRight className="inline size-3" aria-hidden="true" />
           </a>
-          <Button asChild size="sm" className="ml-2 rounded-none">
-            <a href={`${MAIN_SITE}/contact`} target="_blank" rel="noopener noreferrer">Get in touch</a>
+          <Button asChild size="sm" className="site-header-cta ml-2 rounded-none">
+            <a href={`${MAIN_SITE}/contact`} target="_blank" rel="noopener noreferrer">Book a demo</a>
           </Button>
         </nav>
       </div>
@@ -41,7 +54,7 @@ export function SiteFooter() {
         <div>
           <BrandMark />
           <p className="mt-3 max-w-md text-sm text-muted-foreground">
-            Building focused AI products for education and the work around it.
+            Explainable, EU-hosted AI for the Open edX® platform – by Abstract-Technology GmbH, Berlin, Germany.
           </p>
         </div>
         <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
@@ -53,6 +66,7 @@ export function SiteFooter() {
           <a href={`${MAIN_SITE}/privacy-policy`} className="footer-link" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
         </div>
       </div>
+      <p className="site-shell pb-6 text-[10px] text-muted-foreground">Open edX® is a registered trademark of Axim Collaborative, Inc. Abstract-Technology is not affiliated with Axim Collaborative.</p>
     </footer>
   );
 }
@@ -69,7 +83,7 @@ export function PageShell({ children }: { children: ReactNode }) {
 
 export function ProductLink({ to, children }: { to: "/assistant" | "/studio"; children: ReactNode }) {
   return (
-    <Button asChild size="lg" className="h-12 rounded-none px-5">
+    <Button asChild size="lg" className="w-full h-12 rounded-none px-5 sm:w-auto">
       <a href={`${MAIN_SITE}${to === "/assistant" ? "/ai-assistant-openedx" : "/ai-studio-openedx"}`} target="_blank" rel="noopener noreferrer">
         {children}
         <ArrowUpRight aria-hidden="true" />

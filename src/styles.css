@@ -170,10 +170,12 @@
 }
 
 @layer components {
-  .site-shell { width: min(100% - 2rem, 88rem); margin-inline: auto; }
+  .site-shell { position: relative; width: min(100% - 1.5rem, 96rem); margin-inline: auto; }
   .font-display { font-family: var(--font-display); font-weight: 400; letter-spacing: 0; }
   .nav-link { border-bottom: 1px solid transparent; padding: 0.45rem 0.35rem; font-size: 0.8rem; font-weight: 600; color: var(--color-muted-foreground); transition: color 180ms ease, border-color 180ms ease; }
   .nav-link:hover, .nav-link-active { border-color: var(--color-foreground); color: var(--color-foreground); }
+  .mobile-menu-toggle { display: none; align-items: center; justify-content: center; border: 1px solid var(--color-border); color: var(--color-foreground); padding: 0.55rem; }
+  .mobile-menu-toggle svg { width: 1.25rem; height: 1.25rem; }
   .footer-link { color: var(--color-muted-foreground); transition: color 180ms ease; }
   .footer-link:hover { color: var(--color-foreground); }
   .home-hero { display: grid; align-items: start; gap: 2.25rem; padding-block: clamp(3rem, 6vw, 5rem) 3rem; }
@@ -200,10 +202,20 @@
 
 @media (min-width: 768px) {
   @layer components {
-    .site-shell { width: min(100% - 5rem, 88rem); }
+    .site-shell { width: min(100% - 3rem, 96rem); }
     .home-hero { grid-template-columns: minmax(0, 1.65fr) minmax(18rem, .55fr); }
     .editorial-grid { grid-template-columns: minmax(10rem, .35fr) minmax(0, 1fr); }
     .page-intro { grid-template-columns: minmax(0, .85fr) minmax(28rem, 1.15fr); align-items: center; }
+  }
+}
+
+@media (max-width: 639px) {
+  @layer components {
+    .mobile-menu-toggle { display: inline-flex; }
+    .site-nav { position: absolute; z-index: 20; top: 100%; left: 50%; display: none !important; width: 100vw; transform: translateX(-50%); flex-direction: column; align-items: center; justify-content: flex-start; gap: 0.35rem; border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); background: var(--color-background); padding: 0.75rem 1rem 1rem; }
+    .site-nav.is-open { display: flex !important; }
+    .site-nav .nav-link { width: 100%; padding: 0.7rem 0; text-align: center; }
+    .site-header-cta { width: 100%; margin-left: 0 !important; }
   }
 }
 
