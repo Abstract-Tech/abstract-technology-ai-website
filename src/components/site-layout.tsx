@@ -92,6 +92,6 @@ export function ProductLink({ to, children }: { to: "/assistant" | "/studio"; ch
   );
 }
 
-export function ProductNumber({ children }: { children: ReactNode }) {
-  return <span className="product-number text-xs font-semibold uppercase tracking-[0.16em] text-primary">{children}</span>;
+export function ProductNumber({ children, className }: { children: ReactNode; className?: string }) {
+  return <span className={`product-number text-xs font-semibold uppercase tracking-[0.16em] text-primary ${className ?? ""}`}>{children}</span>;
 }
