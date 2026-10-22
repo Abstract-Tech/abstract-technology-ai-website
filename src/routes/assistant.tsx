@@ -5,6 +5,7 @@ import { Fragment } from "react";
 import assistantImage from "@/assets/ai-assistant-openedx.webp";
 import { FaqBlock } from "@/components/blocks/faq";
 import { CtaBlock } from "@/components/blocks/cta";
+import { ImageTextBlock } from "@/components/blocks/image-text";
 import { pageHead } from "@/lib/seo";
 import { PageShell, ProductNumber } from "@/components/site-layout";
 import { Button } from "@/components/ui/button";
@@ -52,15 +53,16 @@ function AssistantPage() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-surface py-14 md:py-20">
-        <div className="site-shell">
-          <ProductNumber className="text-accent">AI Assistant</ProductNumber>
-          <div className="mt-6 grid gap-8 md:grid-cols-[minmax(14rem,.8fr)_minmax(0,1.2fr)] md:items-start">
-            <figure className="editorial-image"><img src={assistantImage} alt="AI Assistant learning companion on a smartphone" width={1080} height={655} loading="lazy" /><figcaption>AI Assistant for Open edX</figcaption></figure>
-            <div><h2 className="section-title studio-section-title">Built for speed. Designed for control.</h2><p className="body-large mt-8">We build intelligent learning platforms, and our AI Assistant is the next step in making Open edX faster, smarter, and easier to manage. This assistant helps you reduce manual work, streamline operations, and interact with your platform in plain language — no complex navigation, no technical barriers. Embedded directly inside the LMS and Studio, the AI Assistant is like a knowledgeable colleague who is always available. It helps you retrieve data, perform actions, and manage your platform in seconds — securely and with full control.</p></div>
-          </div>
-        </div>
-      </section>
+      <ImageTextBlock
+        eyebrow="AI Assistant"
+        title="Built for speed. Designed for control."
+        imageSrc={assistantImage}
+        imageAlt="AI Assistant learning companion on a smartphone"
+        imageWidth={1080}
+        imageHeight={655}
+        caption="AI Assistant for Open edX"
+        body={<>We build intelligent learning platforms, and our AI Assistant is the next step in making Open edX faster, smarter, and easier to manage. This assistant helps you reduce manual work, streamline operations, and interact with your platform in plain language — no complex navigation, no technical barriers. Embedded directly inside the LMS and Studio, the AI Assistant is like a knowledgeable colleague who is always available. It helps you retrieve data, perform actions, and manage your platform in seconds — securely and with full control.</>}
+      />
 
       <section className="site-shell py-16 md:py-24">
         <ProductNumber className="text-accent">Overview of the AI Assistant</ProductNumber>
