@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 
 import { ProductNumber } from "@/components/site-layout";
 import { Button } from "@/components/ui/button";
+import { backgroundVariants, type BackgroundVariant } from "@/lib/background-variants";
 
 type ProductHeroProps = {
   eyebrow: ReactNode;
@@ -13,12 +14,14 @@ type ProductHeroProps = {
   videoCaption: ReactNode;
   ctaLabel?: ReactNode;
   ctaHref?: string;
+  bgVariant?: BackgroundVariant;
 };
 
-export function ProductHero({ eyebrow, title, description, videoSrc, videoTitle, videoCaption, ctaLabel = "Schedule a live demo", ctaHref = "https://abstract-technology.de/contact" }: ProductHeroProps) {
+export function ProductHero({ eyebrow, title, description, videoSrc, videoTitle, videoCaption, ctaLabel = "Schedule a live demo", ctaHref = "https://abstract-technology.de/contact", bgVariant = "default" }: ProductHeroProps) {
   return (
-    <section className="site-shell page-intro">
-      <div className="intro-copy reveal">
+    <section className={backgroundVariants[bgVariant]}>
+      <div className="site-shell page-intro">
+        <div className="intro-copy reveal">
         <ProductNumber className="text-accent">{eyebrow}</ProductNumber>
         <h1 className="display-title mt-8">{title}</h1>
         <p className="intro-lede">{description}</p>
@@ -26,12 +29,13 @@ export function ProductHero({ eyebrow, title, description, videoSrc, videoTitle,
           <a href={ctaHref} target="_blank" rel="noopener noreferrer">{ctaLabel} <ArrowRight aria-hidden="true" /></a>
         </Button>
         <ArrowDownRight className="mt-10 size-8 text-accent" aria-hidden="true" />
-      </div>
-      <div className="reveal reveal-delay">
+        </div>
+        <div className="reveal reveal-delay">
         <div className="video-frame">
           <iframe src={videoSrc} title={videoTitle} allow="autoplay; fullscreen; picture-in-picture" allowFullScreen />
         </div>
         <p className="mt-3 text-center text-xs text-muted-foreground">{videoCaption}</p>
+        </div>
       </div>
     </section>
   );

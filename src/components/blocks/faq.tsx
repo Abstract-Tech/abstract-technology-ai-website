@@ -1,6 +1,8 @@
 import type { ReactNode } from "react";
 
 import { BlockHeader } from "@/components/blocks/block-header";
+import { backgroundVariants, type BackgroundVariant } from "@/lib/background-variants";
+import { cn } from "@/lib/utils";
 
 export type FaqItem = {
   question: string;
@@ -11,11 +13,12 @@ type FaqBlockProps = {
   eyebrow?: ReactNode;
   title: string;
   items: readonly FaqItem[];
+  bgVariant?: BackgroundVariant;
 };
 
-export function FaqBlock({ eyebrow = "FAQ'S", title, items }: FaqBlockProps) {
+export function FaqBlock({ eyebrow = "FAQ'S", title, items, bgVariant = "surface" }: FaqBlockProps) {
   return (
-    <section className="border-y border-border bg-surface py-16 md:py-24">
+    <section className={cn("border-y border-border py-16 md:py-24", backgroundVariants[bgVariant])}>
       <div className="site-shell">
         <BlockHeader eyebrow={eyebrow}>
           {title}

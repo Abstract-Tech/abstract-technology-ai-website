@@ -5,6 +5,8 @@ import studioImage from "@/assets/ai-studio-course-architect.png";
 import assistantPreview from "@/assets/ai-assistant-preview.png";
 import { FaqBlock } from "@/components/blocks/faq";
 import { CtaBlock } from "@/components/blocks/cta";
+import { ImageTextBlock } from "@/components/blocks/image-text";
+import { TableBlock } from "@/components/blocks/table";
 import { ProductHero } from "@/components/heros/product-hero";
 import { pageHead } from "@/lib/seo";
 import { PageShell, ProductNumber } from "@/components/site-layout";
@@ -63,43 +65,31 @@ function StudioPage() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-surface py-16 md:py-24">
-        <div className="site-shell">
-          <ProductNumber className="text-accent">Overview of the AI Studio</ProductNumber>
-          <div className="mt-6">
-            <h2 className="section-title studio-section-title mb-8">From prompt to course in four steps</h2>
-            <div className="divide-y divide-border border-y border-border">
-              {[
-                ["Describe your idea", "Start with a simple idea or prompt and open a guided, conversational planning session."],
-                ["Define the essentials", "Answer questions about audience, outcomes and pacing. The AI Studio shapes the course concept around your goals."],
-                ["Review and confirm", "Approve, adjust or refine at each step. The AI Studio builds a complete, structured outline with sections, subsections and units."],
-                ["Validate and export", "Check the results and export your course. The AI Studio flags structural issues and empty units, then exports to Open edX Studio with one click."],
-              ].map(([title, copy], index) => (
-                <div key={title} className="grid gap-3 py-6 sm:grid-cols-[4rem_1fr_1.5fr] sm:items-start">
-                  <span className="text-sm text-muted-foreground">0{index + 1}</span>
-                  <h3 className="font-display text-2xl">{title}</h3>
-                  <p className="text-muted-foreground">{copy}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <TableBlock
+        eyebrow="Overview of the AI Studio"
+        title="From prompt to course in four steps"
+        columns={["", "Step", "Description"]}
+        accentFirstColumn={false}
+        columnWidths={["5%", "36%", "59%"]}
+        rows={[
+          ["01", "Describe your idea", "Start with a simple idea or prompt and open a guided, conversational planning session."],
+          ["02", "Define the essentials", "Answer questions about audience, outcomes and pacing. The AI Studio shapes the course concept around your goals."],
+          ["03", "Review and confirm", "Approve, adjust or refine at each step. The AI Studio builds a complete, structured outline with sections, subsections and units."],
+          ["04", "Validate and export", "Check the results and export your course. The AI Studio flags structural issues and empty units, then exports to Open edX Studio with one click."],
+        ]}
+      />
 
-      <section className="site-shell py-16 md:py-24">
-        <div className="grid gap-6 rounded-xl border border-border bg-card p-4 md:grid-cols-[minmax(12rem,.35fr)_minmax(0,1fr)] md:items-center md:p-6">
-          <figure className="editorial-image">
-            <img src={assistantPreview} alt="AI Assistant learning companion on a smartphone" width={1080} height={655} loading="lazy" />
-            <figcaption>AI Assistant for Open edX</figcaption>
-          </figure>
-          <div>
-            <ProductNumber className="text-accent">Your AI toolkit</ProductNumber>
-            <h2 className="section-title studio-section-title mt-4">Part of our growing AI toolkit for the Open edX® platform.</h2>
-            <p className="body-large mt-8">The AI Studio works hand in hand with our AI Assistant for Open edX. The AI Studio helps you create courses, and the AI Assistant helps learners, instructors and administrators manage the platform day to day.</p>
-            <a className="mt-8 inline-flex items-center gap-2 font-medium underline underline-offset-4" href="https://abstract-technology.de/ai-assistant-openedx" target="_blank" rel="noopener noreferrer">Explore the AI Assistant <ArrowRight aria-hidden="true" /></a>
-          </div>
-        </div>
-      </section>
+      <ImageTextBlock
+        eyebrow="Your AI toolkit"
+        title="Part of our growing AI toolkit for the Open edX® platform."
+        imageSrc={assistantPreview}
+        imageAlt="AI Assistant learning companion on a smartphone"
+        imageWidth={1080}
+        imageHeight={655}
+        caption="AI Assistant for Open edX"
+        body="The AI Studio works hand in hand with our AI Assistant for Open edX. The AI Studio helps you create courses, and the AI Assistant helps learners, instructors and administrators manage the platform day to day."
+        link={{ label: "Explore the AI Assistant", href: "https://abstract-technology.de/ai-assistant-openedx", external: true }}
+      />
 
       <CtaBlock title="Less manual work. Fewer errors. More time for what matters." />
 
