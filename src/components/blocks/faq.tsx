@@ -19,7 +19,7 @@ type FaqBlockProps = {
   bgVariant?: BackgroundVariant;
 };
 
-export function FaqBlock({ eyebrow = "FAQ'S", title, items, bgVariant = "surface" }: FaqBlockProps) {
+export function FaqBlock({ eyebrow = "FAQ'S", title, items, bgVariant = "default" }: FaqBlockProps) {
   const [openItems, setOpenItems] = useState<Record<string, boolean>>({});
 
   return (
@@ -56,7 +56,9 @@ export function FaqBlock({ eyebrow = "FAQ'S", title, items, bgVariant = "surface
                       transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
                       className="overflow-hidden"
                     >
-                      <p className="mt-4 max-w-3xl text-muted-foreground">{answer}</p>
+                      <div className="mt-4 max-w-3xl space-y-4 text-muted-foreground">
+                        {answer.split(/\n\n+/).map((paragraph, paragraphIndex) => <p key={paragraphIndex}>{paragraph}</p>)}
+                      </div>
                     </motion.div>
                   )}
                 </AnimatePresence>

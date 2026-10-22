@@ -27,8 +27,8 @@ export function FeaturedGridBlock({ eyebrow, title, items, className, bgVariant 
         <BlockHeader eyebrow={eyebrow} titleClassName="max-w-none">{title}</BlockHeader>
         <div className="mt-8 grid gap-4 md:grid-cols-3">
         {items.map(({ title: itemTitle, description, icon }, index) => (
-          <article key={index} className="rounded-lg border border-border bg-muted p-5">
-            <div className="mb-5 flex size-8 items-center justify-center rounded-md bg-accent/10 text-accent">
+          <article key={index} className="rounded-2xl border border-border bg-muted p-5">
+            <div className="mb-5 flex size-8 items-center justify-center rounded-xl bg-accent/10 text-accent">
               {icon ?? <Hexagon className="size-5" strokeWidth={1.75} aria-hidden="true" />}
             </div>
             <h3 className="font-display text-xl font-semibold">{itemTitle}</h3>

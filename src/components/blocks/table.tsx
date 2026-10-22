@@ -24,17 +24,17 @@ export function TableBlock({ eyebrow, title, columns, rows, bgVariant = "default
       <div className="site-shell">
         <BlockHeader eyebrow={eyebrow}>{title}</BlockHeader>
         <div className="mt-8 overflow-x-auto">
-          <table className="w-full min-w-[42rem] table-fixed border border-border text-left text-base">
+          <table className="w-full min-w-[36rem] table-auto border border-border text-left text-sm md:min-w-[42rem] md:table-fixed md:text-base">
           <colgroup>
             {columns.map((_, index) => <col key={index} className={columnWidths ? undefined : index === 0 ? "w-1/5" : "w-2/5"} style={columnWidths?.[index] ? { width: columnWidths[index] } : undefined} />)}
           </colgroup>
           {showHeader ? <thead className="bg-muted/50 text-muted-foreground">
-            <tr>{columns.map((column, index) => <th key={index} className="border-b border-r border-border px-5 py-4 text-base font-medium last:border-r-0">{column}</th>)}</tr>
+            <tr>{columns.map((column, index) => <th key={index} className="break-words border-b border-r border-border px-3 py-3 font-medium last:border-r-0 md:px-5 md:py-4 md:text-base">{column}</th>)}</tr>
           </thead> : null}
           <tbody>
             {rows.map((row, rowIndex) => (
               <tr key={rowIndex} className="transition-colors hover:bg-muted/30">
-                {row.map((cell, cellIndex) => <td key={cellIndex} className={`border-b border-r border-border px-5 py-6 align-top text-muted-foreground last:border-r-0${accentFirstColumn && cellIndex === 0 ? " font-semibold text-accent" : ""}`}>{cell}</td>)}
+                {row.map((cell, cellIndex) => <td key={cellIndex} className={`break-words border-b border-r border-border px-3 py-4 align-top text-muted-foreground last:border-r-0 md:px-5 md:py-6${accentFirstColumn && cellIndex === 0 ? " font-semibold text-accent" : ""}`}>{cell}</td>)}
               </tr>
             ))}
           </tbody>

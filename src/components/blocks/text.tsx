@@ -15,7 +15,7 @@ type TextBlockProps = {
   bgVariant?: BackgroundVariant;
 };
 
-export function TextBlock({ eyebrow, title, children, className, titleClassName, contentClassName, bgVariant = "surface" }: TextBlockProps) {
+export function TextBlock({ eyebrow, title, children, className, titleClassName, contentClassName, bgVariant = "default" }: TextBlockProps) {
   return (
     <MotionSection animation="fade" className={cn("border-y border-border py-16 md:py-24", backgroundVariants[bgVariant], className)}>
       <div className="site-shell">

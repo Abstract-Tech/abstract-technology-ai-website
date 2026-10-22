@@ -14,7 +14,7 @@ type CtaBlockProps = {
   bgVariant?: BackgroundVariant;
 };
 
-export function CtaBlock({ eyebrow = "READY TO GET STARTED?", title, buttonLabel = "Schedule a live demo", href = "https://abstract-technology.de/contact", bgVariant = "surface" }: CtaBlockProps) {
+export function CtaBlock({ eyebrow = "READY TO GET STARTED?", title, buttonLabel = "Schedule a live demo", href = "https://abstract-technology.de/contact", bgVariant = "default" }: CtaBlockProps) {
   return (
     <MotionSection animation="rise" className={cn("border-y border-border py-16 md:py-20", backgroundVariants[bgVariant])}>
       <div className="site-shell text-center">

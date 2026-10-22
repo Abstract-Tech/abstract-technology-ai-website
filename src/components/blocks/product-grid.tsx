@@ -13,7 +13,7 @@ export type ProductGridItem = {
   imageAlt: string;
   imageWidth: number;
   imageHeight: number;
-  href: "/assistant" | "/studio";
+  href: "/ai-assistant" | "/ai-studio";
   linkLabel: ReactNode;
 };
 

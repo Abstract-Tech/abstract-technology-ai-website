@@ -22,7 +22,7 @@ type ImageTextBlockProps = {
   bgVariant?: BackgroundVariant;
 };
 
-export function ImageTextBlock({ eyebrow, title, body, imageSrc, imageAlt, imageWidth, imageHeight, caption, reverse = false, items, itemsColumns = 2, link, bgVariant = "surface" }: ImageTextBlockProps) {
+export function ImageTextBlock({ eyebrow, title, body, imageSrc, imageAlt, imageWidth, imageHeight, caption, reverse = false, items, itemsColumns = 2, link, bgVariant = "default" }: ImageTextBlockProps) {
   return (
     <MotionSection animation="slide-right" className={cn("border-y border-border py-14 md:py-20", backgroundVariants[bgVariant])}>
       <div className="site-shell">

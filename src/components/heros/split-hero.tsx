@@ -2,6 +2,7 @@ import { ArrowDownRight } from "lucide-react";
 import type { ReactNode } from "react";
 
 import { ProductNumber } from "@/components/site-layout";
+import { MotionSection } from "@/components/motion/motion-section";
 import { backgroundVariants, type BackgroundVariant } from "@/lib/background-variants";
 import { cn } from "@/lib/utils";
 
@@ -16,7 +17,7 @@ type SplitHeroProps = {
 
 export function SplitHero({ eyebrow, title, description, aside, asideLink, bgVariant = "default" }: SplitHeroProps) {
   return (
-    <section className={backgroundVariants[bgVariant]}>
+    <MotionSection animation="fade" className={backgroundVariants[bgVariant]}>
       <div className="site-shell home-hero">
         <div>
           <ProductNumber>{eyebrow}</ProductNumber>
@@ -29,6 +30,6 @@ export function SplitHero({ eyebrow, title, description, aside, asideLink, bgVar
           <ArrowDownRight className="mt-10 size-9 text-accent" aria-hidden="true" />
         </div>
       </div>
-    </section>
+    </MotionSection>
   );
 }
