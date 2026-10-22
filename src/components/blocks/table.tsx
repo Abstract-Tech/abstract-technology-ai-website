@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 
 import { BlockHeader } from "@/components/blocks/block-header";
+import { MotionSection } from "@/components/motion/motion-section";
 import { backgroundVariants, type BackgroundVariant } from "@/lib/background-variants";
 import { cn } from "@/lib/utils";
 
@@ -19,7 +20,7 @@ type TableBlockProps = {
 
 export function TableBlock({ eyebrow, title, columns, rows, bgVariant = "default", showHeader = true, accentFirstColumn = true, columnWidths }: TableBlockProps) {
   return (
-    <section className={cn("py-16 md:py-24", backgroundVariants[bgVariant])}>
+    <MotionSection animation="fade" className={cn("py-16 md:py-24", backgroundVariants[bgVariant])}>
       <div className="site-shell">
         <BlockHeader eyebrow={eyebrow}>{title}</BlockHeader>
         <div className="mt-8 overflow-x-auto">
@@ -40,6 +41,6 @@ export function TableBlock({ eyebrow, title, columns, rows, bgVariant = "default
           </table>
         </div>
       </div>
-    </section>
+    </MotionSection>
   );
 }

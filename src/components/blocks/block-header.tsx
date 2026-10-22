@@ -13,9 +13,9 @@ type BlockHeaderProps = {
 
 export function BlockHeader({ eyebrow, children, className, eyebrowClassName, titleClassName }: BlockHeaderProps) {
   return (
-    <header className={cn("block-header", className)}>
+      <header className={cn("block-header", className)}>
       <ProductNumber className={eyebrowClassName}>{eyebrow}</ProductNumber>
       {children ? <h2 className={cn("block-header-title", titleClassName)}>{children}</h2> : null}
-    </header>
+      </header>
   );
 }

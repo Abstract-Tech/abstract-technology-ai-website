@@ -2,6 +2,7 @@ import { Hexagon } from "lucide-react";
 import type { ReactNode } from "react";
 
 import { BlockHeader } from "@/components/blocks/block-header";
+import { MotionSection } from "@/components/motion/motion-section";
 import { backgroundVariants, type BackgroundVariant } from "@/lib/background-variants";
 import { cn } from "@/lib/utils";
 
@@ -21,7 +22,7 @@ type FeaturedGridBlockProps = {
 
 export function FeaturedGridBlock({ eyebrow, title, items, className, bgVariant = "default" }: FeaturedGridBlockProps) {
   return (
-    <section className={cn("py-16 md:py-24", backgroundVariants[bgVariant], className)}>
+    <MotionSection animation="scale" className={cn("py-16 md:py-24", backgroundVariants[bgVariant], className)}>
       <div className="site-shell">
         <BlockHeader eyebrow={eyebrow} titleClassName="max-w-none">{title}</BlockHeader>
         <div className="mt-8 grid gap-4 md:grid-cols-3">
@@ -36,6 +37,6 @@ export function FeaturedGridBlock({ eyebrow, title, items, className, bgVariant 
         ))}
         </div>
       </div>
-    </section>
+    </MotionSection>
   );
 }

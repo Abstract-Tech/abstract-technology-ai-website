@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { ArrowRight } from "lucide-react";
 
 import { BlockHeader } from "@/components/blocks/block-header";
+import { MotionSection } from "@/components/motion/motion-section";
 import { backgroundVariants, type BackgroundVariant } from "@/lib/background-variants";
 import { cn } from "@/lib/utils";
 
@@ -23,7 +24,7 @@ type ImageTextBlockProps = {
 
 export function ImageTextBlock({ eyebrow, title, body, imageSrc, imageAlt, imageWidth, imageHeight, caption, reverse = false, items, itemsColumns = 2, link, bgVariant = "surface" }: ImageTextBlockProps) {
   return (
-    <section className={cn("border-y border-border py-14 md:py-20", backgroundVariants[bgVariant])}>
+    <MotionSection animation="slide-right" className={cn("border-y border-border py-14 md:py-20", backgroundVariants[bgVariant])}>
       <div className="site-shell">
         <div className={`mt-6 grid gap-8 md:grid-cols-[minmax(14rem,.8fr)_minmax(0,1.2fr)] md:items-start${reverse ? " md:[&>figure]:order-2" : ""}`}>
           <figure className="editorial-image">
@@ -40,6 +41,6 @@ export function ImageTextBlock({ eyebrow, title, body, imageSrc, imageAlt, image
           </div>
         </div>
       </div>
-    </section>
+    </MotionSection>
   );
 }

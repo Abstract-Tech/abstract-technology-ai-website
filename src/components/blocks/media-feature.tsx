@@ -2,6 +2,7 @@ import { ArrowRight } from "lucide-react";
 import type { ReactNode } from "react";
 
 import { BlockHeader } from "@/components/blocks/block-header";
+import { MotionSection } from "@/components/motion/motion-section";
 import { backgroundVariants, type BackgroundVariant } from "@/lib/background-variants";
 import { cn } from "@/lib/utils";
 
@@ -27,7 +28,7 @@ type MediaFeatureBlockProps = {
 
 export function MediaFeatureBlock({ eyebrow, title, body, imageSrc, imageAlt, imageWidth, imageHeight, caption, features, cta, bgVariant = "surface", className }: MediaFeatureBlockProps) {
   return (
-    <section className={cn("border-y border-border py-14 md:py-20", backgroundVariants[bgVariant], className)}>
+    <MotionSection animation="slide-right" className={cn("border-y border-border py-14 md:py-20", backgroundVariants[bgVariant], className)}>
       <div className="site-shell">
         <BlockHeader eyebrow={eyebrow} />
         <div className="mt-6 grid gap-8 md:grid-cols-[minmax(14rem,.8fr)_minmax(0,1.2fr)] md:items-start">
@@ -45,6 +46,6 @@ export function MediaFeatureBlock({ eyebrow, title, body, imageSrc, imageAlt, im
           </div>
         </div>
       </div>
-    </section>
+    </MotionSection>
   );
 }

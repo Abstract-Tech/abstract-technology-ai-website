@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 
 import { ProductLink, ProductNumber } from "@/components/site-layout";
+import { MotionSection } from "@/components/motion/motion-section";
 import { backgroundVariants, type BackgroundVariant } from "@/lib/background-variants";
 import { cn } from "@/lib/utils";
 
@@ -25,7 +26,7 @@ type ProductGridBlockProps = {
 
 export function ProductGridBlock({ eyebrow, description, items, bgVariant = "default" }: ProductGridBlockProps) {
   return (
-    <section className={cn("border-y border-border", backgroundVariants[bgVariant])} aria-label={typeof eyebrow === "string" ? eyebrow : undefined}>
+    <MotionSection animation="scale" className={cn("border-y border-border", backgroundVariants[bgVariant])} aria-label={typeof eyebrow === "string" ? eyebrow : undefined}>
       <div className="site-shell py-5">
         <div className="flex items-center justify-between gap-6">
           <ProductNumber>{eyebrow}</ProductNumber>
@@ -45,6 +46,6 @@ export function ProductGridBlock({ eyebrow, description, items, bgVariant = "def
           </article>
         ))}
       </div>
-    </section>
+    </MotionSection>
   );
 }

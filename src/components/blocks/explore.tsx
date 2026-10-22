@@ -2,6 +2,7 @@ import { ArrowRight } from "lucide-react";
 import type { ReactNode } from "react";
 
 import { BlockHeader } from "@/components/blocks/block-header";
+import { MotionSection } from "@/components/motion/motion-section";
 import { Button } from "@/components/ui/button";
 import { backgroundVariants, type BackgroundVariant } from "@/lib/background-variants";
 import { cn } from "@/lib/utils";
@@ -18,7 +19,7 @@ type ExploreBlockProps = {
 
 export function ExploreBlock({ eyebrow, title, description, buttonLabel, href, bgVariant = "default", className }: ExploreBlockProps) {
   return (
-    <section className={cn("border-y border-border py-16 md:py-24", backgroundVariants[bgVariant], className)}>
+    <MotionSection animation="slide-left" className={cn("border-y border-border py-16 md:py-24", backgroundVariants[bgVariant], className)}>
       <div className="site-shell">
         <BlockHeader eyebrow={eyebrow}>{title}</BlockHeader>
         <div className="mt-10 flex flex-col gap-8 border-t border-border pt-8 md:flex-row md:items-end md:justify-between md:gap-12">
@@ -28,6 +29,6 @@ export function ExploreBlock({ eyebrow, title, description, buttonLabel, href, b
           </Button>
         </div>
       </div>
-    </section>
+    </MotionSection>
   );
 }
