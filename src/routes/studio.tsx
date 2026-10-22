@@ -64,7 +64,7 @@ function StudioPage() {
         <div className="site-shell flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-accent-foreground/65">First from the studio</p>
-            <h2 className="mt-4 max-w-2xl font-display text-4xl md:text-6xl">Meet the AI Assistant for Open edX.</h2>
+            <h2 className="mt-4 max-w-2xl font-display text-3xl md:text-5xl">Meet the AI Assistant for Open edX.</h2>
           </div>
           <Button asChild size="lg" className="w-full h-12 shrink-0 rounded-none bg-foreground text-background hover:bg-foreground/90 sm:w-auto">
             <a href="https://abstract-technology.de/ai-assistant-openedx" target="_blank" rel="noopener noreferrer">Explore the assistant <ArrowRight aria-hidden="true" /></a>

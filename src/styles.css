@@ -4,6 +4,38 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@font-face {
+  font-family: "Clash Display";
+  src: url("/fonts/ClashDIsplay/ClashDisplay-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Clash Display";
+  src: url("/fonts/ClashDIsplay/ClashDisplay-Medium.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Clash Display";
+  src: url("/fonts/ClashDIsplay/ClashDisplay-Semibold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Clash Display";
+  src: url("/fonts/ClashDIsplay/ClashDisplay-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
 /*
  * Design system definition.
  *
@@ -60,8 +92,8 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-surface: var(--surface);
-  --font-sans: "Work Sans", sans-serif;
-  --font-display: "Instrument Serif", serif;
+  --font-sans: "Montserrat", sans-serif;
+  --font-display: "Clash Display", sans-serif;
 }
 
 :root {
@@ -167,11 +199,17 @@
     letter-spacing: 0;
     text-rendering: optimizeLegibility;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Clash Display", sans-serif;
+    font-weight: unset;
+  }
 }
 
 @layer components {
   .site-shell { position: relative; width: min(100% - 1.5rem, 96rem); margin-inline: auto; }
-  .font-display { font-family: var(--font-display); font-weight: 400; letter-spacing: 0; }
+  .font-display { font-family: var(--font-display); font-weight: 600; letter-spacing: 0; }
+  .font-clash { font-family: "Clash Display", sans-serif; }
   .nav-link { border-bottom: 1px solid transparent; padding: 0.45rem 0.35rem; font-size: 0.8rem; font-weight: 600; color: var(--color-muted-foreground); transition: color 180ms ease, border-color 180ms ease; }
   .nav-link:hover, .nav-link-active { border-color: var(--color-foreground); color: var(--color-foreground); }
   .mobile-menu-toggle { display: none; align-items: center; justify-content: center; border: 1px solid var(--color-border); color: var(--color-foreground); padding: 0.55rem; }
@@ -179,22 +217,23 @@
   .footer-link { color: var(--color-muted-foreground); transition: color 180ms ease; }
   .footer-link:hover { color: var(--color-foreground); }
   .home-hero { display: grid; align-items: start; gap: 2.25rem; padding-block: clamp(3rem, 6vw, 5rem) 3rem; }
-  .home-title { max-width: 10ch; font-family: var(--font-display); font-size: clamp(4.5rem, 12vw, 10rem); font-weight: 400; line-height: 0.88; letter-spacing: 0; }
-  .home-title em, .display-title em, .section-title em { color: var(--color-primary); font-weight: 400; }
+  .home-title { max-width: 10ch; font-family: var(--font-display); font-size: clamp(3.75rem, 8.5vw, 7.5rem); font-weight: 600; line-height: 0.9; letter-spacing: 0; }
+  .home-title em, .display-title em, .section-title em { color: var(--color-primary); font-weight: 600; }
   .hero-aside { border-top: 1px solid var(--color-foreground); padding-top: 1.5rem; }
   .product-panel { overflow: hidden; }
   .product-image-wrap { aspect-ratio: 4 / 3; overflow: hidden; }
   .product-image-wrap img, .editorial-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 700ms cubic-bezier(.2,.7,.2,1); }
   .product-panel:hover .product-image-wrap img { transform: scale(1.025); }
   .editorial-grid { display: grid; gap: 2.25rem; }
-  .section-index { margin-top: 1.5rem; font-family: var(--font-display); font-size: 4rem; color: var(--color-border); }
+  .section-index { margin-top: 1.5rem; font-family: "Clash Display", sans-serif; font-size: 4rem; color: var(--color-border); }
+  .product-number { font-family: var(--font-sans); letter-spacing: 0.025em; }
   .partner-image { display: block; width: 100%; max-width: 32rem; height: auto; margin-top: 1.5rem; object-fit: cover; }
   .company-detail { font-size: 0.86rem; line-height: 1.5; }
-  .section-title { max-width: 14ch; font-family: var(--font-display); font-size: clamp(2.8rem, 6vw, 5.5rem); font-weight: 400; line-height: 0.98; letter-spacing: 0; }
+  .section-title { max-width: 14ch; font-family: var(--font-display); font-size: clamp(2.25rem, 4.5vw, 4rem); font-weight: 600; line-height: 1; letter-spacing: 0; }
   .body-large { font-size: clamp(1.15rem, 2vw, 1.5rem); line-height: 1.55; }
   .page-intro { display: grid; gap: 2.25rem; padding-block: clamp(2.75rem, 6vw, 5rem); }
   .intro-copy { align-self: center; }
-  .display-title { max-width: 12ch; font-family: var(--font-display); font-size: clamp(3.5rem, 7vw, 7rem); font-weight: 400; line-height: 0.9; letter-spacing: 0; }
+  .display-title { max-width: 12ch; font-family: var(--font-display); font-size: clamp(3rem, 5.5vw, 5.5rem); font-weight: 600; line-height: 0.95; letter-spacing: 0; }
   .intro-lede { margin-top: 2rem; max-width: 32rem; font-size: 1.15rem; line-height: 1.65; color: var(--color-muted-foreground); }
   .editorial-image { position: relative; aspect-ratio: 4 / 3; overflow: hidden; }
   .editorial-image figcaption { position: absolute; right: 0; bottom: 0; background: var(--color-background); padding: 0.75rem 1rem; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; }
@@ -205,7 +244,7 @@
 @media (min-width: 768px) {
   @layer components {
     .site-shell { width: min(100% - 3rem, 96rem); }
-    .home-hero { grid-template-columns: minmax(0, 1.65fr) minmax(18rem, .55fr); }
+    .home-hero { grid-template-columns: minmax(0, 1.45fr) minmax(20rem, .75fr); }
     .editorial-grid { grid-template-columns: minmax(10rem, .35fr) minmax(0, 1fr); }
     .company-grid { grid-template-columns: minmax(22rem, .7fr) minmax(0, 1.3fr); }
     .page-intro { grid-template-columns: minmax(0, .85fr) minmax(28rem, 1.15fr); align-items: center; }

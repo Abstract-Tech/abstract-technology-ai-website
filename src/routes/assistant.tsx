@@ -64,7 +64,7 @@ function AssistantPage() {
         <div className="site-shell flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary-foreground/70">Continue exploring</p>
-            <h2 className="mt-4 max-w-2xl font-display text-4xl md:text-6xl">See the studio behind our AI product work.</h2>
+            <h2 className="mt-4 max-w-2xl font-display text-3xl md:text-5xl">See the studio behind our AI product work.</h2>
           </div>
           <Button asChild size="lg" variant="secondary" className="w-full h-12 shrink-0 rounded-none sm:w-auto">
             <a href="https://abstract-technology.de/ai-studio-openedx" target="_blank" rel="noopener noreferrer">Visit AI Studio <ArrowRight aria-hidden="true" /></a>

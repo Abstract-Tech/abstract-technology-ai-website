@@ -93,5 +93,5 @@ export function ProductLink({ to, children }: { to: "/assistant" | "/studio"; ch
 }
 
 export function ProductNumber({ children }: { children: ReactNode }) {
-  return <span className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">{children}</span>;
+  return <span className="product-number text-xs font-semibold uppercase tracking-[0.16em] text-primary">{children}</span>;
 }
