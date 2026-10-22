@@ -1,10 +1,11 @@
-import { ArrowDownRight, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { createFileRoute } from "@tanstack/react-router";
 
 import studioImage from "@/assets/ai-studio-course-architect.png";
 import assistantPreview from "@/assets/ai-assistant-preview.png";
 import { FaqBlock } from "@/components/blocks/faq";
 import { CtaBlock } from "@/components/blocks/cta";
+import { ProductHero } from "@/components/heros/product-hero";
 import { pageHead } from "@/lib/seo";
 import { PageShell, ProductNumber } from "@/components/site-layout";
 import { Button } from "@/components/ui/button";
@@ -17,30 +18,14 @@ export const Route = createFileRoute("/studio")({
 function StudioPage() {
   return (
     <PageShell>
-      <section className="site-shell page-intro">
-        <div className="intro-copy reveal">
-          <ProductNumber className="text-accent">AI Studio / Open edX®</ProductNumber>
-          <h1 className="display-title mt-8">Create online courses<br /><em>in minutes, not weeks.</em></h1>
-          <p className="intro-lede">
-            AI-powered content creation with built-in guardrails, including pedagogical and instructional design checks.
-          </p>
-          <Button asChild size="lg" className="mt-8 w-full rounded-none sm:w-auto">
-            <a href="https://abstract-technology.de/contact" target="_blank" rel="noopener noreferrer">Schedule a live demo <ArrowRight aria-hidden="true" /></a>
-          </Button>
-          <ArrowDownRight className="mt-10 size-8 text-accent" aria-hidden="true" />
-        </div>
-        <div className="reveal reveal-delay">
-          <div className="video-frame">
-            <iframe
-              src="https://player.vimeo.com/video/1231271012?title=0&byline=0&portrait=0&badge=0&dnt=1"
-              title="The Abstract-Technology AI Studio for your Open edX platform"
-              allow="autoplay; fullscreen; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
-          <p className="mt-3 text-center text-xs text-muted-foreground">The Abstract-Technology AI Studio for your Open edX® platform</p>
-        </div>
-      </section>
+      <ProductHero
+        eyebrow="AI Studio / Open edX®"
+        title={<>Create online courses<br /><em>in minutes, not weeks.</em></>}
+        description="AI-powered content creation with built-in guardrails, including pedagogical and instructional design checks."
+        videoSrc="https://player.vimeo.com/video/1231271012?title=0&byline=0&portrait=0&badge=0&dnt=1"
+        videoTitle="The Abstract-Technology AI Studio for your Open edX platform"
+        videoCaption="The Abstract-Technology AI Studio for your Open edX® platform"
+      />
 
       <section className="border-y border-border bg-surface py-14 md:py-20">
         <div className="site-shell">

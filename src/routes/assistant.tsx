@@ -1,4 +1,4 @@
-import { ArrowDownRight, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { createFileRoute } from "@tanstack/react-router";
 
 import assistantImage from "@/assets/ai-assistant-openedx.webp";
@@ -8,6 +8,7 @@ import { FeaturedGridBlock } from "@/components/blocks/featured-grid";
 import { ImageTextBlock } from "@/components/blocks/image-text";
 import { TableBlock } from "@/components/blocks/table";
 import { TextBlock } from "@/components/blocks/text";
+import { ProductHero } from "@/components/heros/product-hero";
 import { pageHead } from "@/lib/seo";
 import { PageShell, ProductNumber } from "@/components/site-layout";
 import { Button } from "@/components/ui/button";
@@ -41,19 +42,14 @@ const faqs = [
 function AssistantPage() {
   return (
     <PageShell>
-      <section className="site-shell page-intro">
-        <div className="intro-copy reveal">
-          <ProductNumber className="text-accent">AI Assistant</ProductNumber>
-          <h1 className="display-title mt-8">Simplify<br /><em>LMS Administration</em></h1>
-          <p className="intro-lede">Turn platform management into simple conversations using the AI Assistant and manage users, enrolments, and data in one place, without the usual complexity.</p>
-          <Button asChild size="lg" className="mt-8 w-full rounded-none sm:w-auto"><a href="https://abstract-technology.de/contact" target="_blank" rel="noopener noreferrer">Schedule a live demo <ArrowRight aria-hidden="true" /></a></Button>
-          <ArrowDownRight className="mt-10 size-8 text-accent" aria-hidden="true" />
-        </div>
-        <div className="reveal reveal-delay">
-          <div className="video-frame"><iframe src="https://player.vimeo.com/video/1231271817?title=0&byline=0&portrait=0&badge=0&dnt=1" title="The Abstract-Technology AI Assistant for your Open edX platform" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen /></div>
-          <p className="mt-3 text-center text-xs text-muted-foreground">The Abstract-Technology AI Assistant for your Open edX® platform</p>
-        </div>
-      </section>
+      <ProductHero
+        eyebrow="AI Assistant"
+        title={<>Simplify<br /><em>LMS Administration</em></>}
+        description="Turn platform management into simple conversations using the AI Assistant and manage users, enrolments, and data in one place, without the usual complexity."
+        videoSrc="https://player.vimeo.com/video/1231271817?title=0&byline=0&portrait=0&badge=0&dnt=1"
+        videoTitle="The Abstract-Technology AI Assistant for your Open edX platform"
+        videoCaption="The Abstract-Technology AI Assistant for your Open edX® platform"
+      />
 
       <ImageTextBlock
         eyebrow="AI Assistant"

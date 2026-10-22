@@ -254,7 +254,7 @@
     .home-hero { grid-template-columns: minmax(0, 1.45fr) minmax(20rem, .75fr); }
     .editorial-grid { grid-template-columns: minmax(10rem, .35fr) minmax(0, 1fr); }
     .company-grid { grid-template-columns: minmax(22rem, .7fr) minmax(0, 1.3fr); }
-    .page-intro { grid-template-columns: minmax(0, .85fr) minmax(28rem, 1.15fr); align-items: center; }
+    .page-intro { grid-template-columns: minmax(0, .85fr) minmax(28rem, 1.15fr); column-gap: clamp(3.5rem, 7vw, 7rem); align-items: center; }
   }
 }
 
