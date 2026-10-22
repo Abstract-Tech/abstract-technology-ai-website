@@ -4,6 +4,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import studioImage from "@/assets/ai-studio-course-architect.png";
 import assistantPreview from "@/assets/ai-assistant-preview.png";
 import { FaqBlock } from "@/components/blocks/faq";
+import { CtaBlock } from "@/components/blocks/cta";
 import { pageHead } from "@/lib/seo";
 import { PageShell, ProductNumber } from "@/components/site-layout";
 import { Button } from "@/components/ui/button";
@@ -115,17 +116,7 @@ function StudioPage() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-surface py-16 text-foreground md:py-20">
-        <div className="site-shell flex flex-col items-center gap-6 text-center">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">Ready to get started?</p>
-            <h2 className="studio-section-title mt-4 max-w-2xl font-display text-3xl md:text-5xl">Less manual work. Fewer errors. More time for what matters.</h2>
-          </div>
-          <Button asChild size="lg" className="h-12 w-full shrink-0 rounded-none bg-primary text-primary-foreground hover:bg-primary/90 sm:w-auto">
-            <a href="https://abstract-technology.de/contact" target="_blank" rel="noopener noreferrer">Schedule a live demo <ArrowRight aria-hidden="true" /></a>
-          </Button>
-        </div>
-      </section>
+      <CtaBlock title="Less manual work. Fewer errors. More time for what matters." />
 
       <FaqBlock
         title="The questions we hear most."

@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 type BlockHeaderProps = {
   eyebrow: ReactNode;
-  children: ReactNode;
+  children?: ReactNode;
   className?: string;
   eyebrowClassName?: string;
   titleClassName?: string;
@@ -15,7 +15,7 @@ export function BlockHeader({ eyebrow, children, className, eyebrowClassName, ti
   return (
     <header className={cn("block-header", className)}>
       <ProductNumber className={eyebrowClassName}>{eyebrow}</ProductNumber>
-      <h2 className={cn("block-header-title", titleClassName)}>{children}</h2>
+      {children ? <h2 className={cn("block-header-title", titleClassName)}>{children}</h2> : null}
     </header>
   );
 }

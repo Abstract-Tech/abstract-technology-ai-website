@@ -4,6 +4,7 @@ import { Fragment } from "react";
 
 import assistantImage from "@/assets/ai-assistant-openedx.webp";
 import { FaqBlock } from "@/components/blocks/faq";
+import { CtaBlock } from "@/components/blocks/cta";
 import { pageHead } from "@/lib/seo";
 import { PageShell, ProductNumber } from "@/components/site-layout";
 import { Button } from "@/components/ui/button";
@@ -72,7 +73,7 @@ function AssistantPage() {
 
       <section className="border-y border-border bg-surface py-16 md:py-24"><div className="site-shell"><ProductNumber className="text-accent">Security &amp; control</ProductNumber><div className="mt-6 grid gap-8 md:grid-cols-[minmax(14rem,.5fr)_minmax(0,1fr)] md:items-start"><figure className="editorial-image"><img src={assistantImage} alt="AI Assistant interface on a smartphone" width={1080} height={655} loading="lazy" /><figcaption>Powerful by default</figcaption></figure><div><h2 className="section-title studio-section-title">Powerful by default. Reversible by design.</h2><div className="mt-8 grid gap-6 md:grid-cols-3">{[["Human-in-the-loop for every step", "Destructive or bulk actions require explicit confirmation. No accidental enrolments, results or certificates."], ["Your data stays in your tenant", "Actions stay inside your environment and are logged so you can trace what happened and why."], ["Your choice of LLM", "Avoid vendor lock-in with your choice of language model, including self-hosted models."]].map(([title, copy]) => <div key={title}><h3 className="font-display text-xl">{title}</h3><p className="mt-2 text-sm text-muted-foreground">{copy}</p></div>)}</div></div></div></div></section>
 
-      <section className="site-shell py-16 md:py-24"><div className="mx-auto max-w-4xl text-center"><h2 className="assistant-cta-title">Test the AI Assistant in a real environment and explore how it fits your use case.</h2><Button asChild size="lg" className="mt-8 rounded-full"><a href="https://abstract-technology.de/contact" target="_blank" rel="noopener noreferrer">Schedule a live demo <ArrowRight aria-hidden="true" /></a></Button></div></section>
+      <CtaBlock title="Test the AI Assistant in a real environment and explore how it fits your use case." />
 
       <section className="border-y border-border bg-surface py-16 md:py-24"><div className="site-shell"><ProductNumber className="text-accent">AI Studio for Open edX</ProductNumber><div className="mt-6 grid gap-8 md:grid-cols-[1fr_auto] md:items-center"><div><h2 className="section-title studio-section-title">The AI Assistant helps you run Open edX.</h2><p className="body-large mt-6 max-w-2xl">AI Studio helps you create courses; the AI Assistant helps learners, instructors and administrators manage them day to day.</p></div><Button asChild variant="outline" size="lg" className="rounded-none"><a href="https://abstract-technology.de/ai-studio-openedx" target="_blank" rel="noopener noreferrer">See AI Studio <ArrowRight aria-hidden="true" /></a></Button></div></div></section>
 
