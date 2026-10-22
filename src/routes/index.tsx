@@ -5,9 +5,10 @@ import assistantImage from "@/assets/ai-assistant-openedx.webp";
 import studioImage from "@/assets/ai-studio-openedx.webp";
 import partnerImage from "@/assets/open-edx-partner.webp";
 import { ImageTextBlock } from "@/components/blocks/image-text";
+import { ProductGridBlock } from "@/components/blocks/product-grid";
 import { SplitHero } from "@/components/heros/split-hero";
 import { pageHead } from "@/lib/seo";
-import { PageShell, ProductLink, ProductNumber } from "@/components/site-layout";
+import { PageShell, ProductNumber } from "@/components/site-layout";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/")({
@@ -26,34 +27,34 @@ function Index() {
         asideLink={{ label: "By Abstract-Technology, certified partner for the Open edX® platform in Europe", href: "https://abstract-technology.de/about", external: true }}
       />
 
-      <section className="border-y border-border" aria-labelledby="products-title">
-        <div className="site-shell py-5">
-          <div className="flex items-center justify-between gap-6">
-            <h2 id="products-title" className="text-xs font-semibold uppercase tracking-[0.16em]">AI products for the Open edX® platform</h2>
-            <span className="text-xs text-muted-foreground">Two tools. One platform. Less manual work.</span>
-          </div>
-        </div>
-        <div className="site-shell grid gap-px border-x border-border bg-border lg:grid-cols-2">
-          <article className="product-panel bg-background">
-            <div className="product-image-wrap"><img src={assistantImage} alt="AI learning companion on a smartphone beside a notebook" width={1080} height={655} /></div>
-            <div className="p-6 md:p-8">
-              <ProductNumber>01 / LMS administration</ProductNumber>
-              <h3 className="mt-5 font-display text-4xl md:text-5xl">AI Assistant<br /><em>for the Open edX® platform</em></h3>
-              <p className="mt-5 max-w-md text-muted-foreground">A conversational AI assistant embedded in the LMS and Studio of the Open edX® platform. Learners, instructors and administrators manage enrolments, grades, deadlines, certificates and course audits in plain language – every change previewed and confirmed by a human.</p>
-              <div className="mt-8"><ProductLink to="/assistant">Explore the AI Assistant</ProductLink></div>
-            </div>
-          </article>
-          <article className="product-panel bg-background">
-            <div className="product-image-wrap"><img src={studioImage} alt="AI Studio course creation tools displayed over a laptop" width={1323} height={800} loading="lazy" /></div>
-            <div className="p-6 md:p-8">
-              <ProductNumber>02 / AI course authoring</ProductNumber>
-              <h3 className="mt-5 font-display text-4xl md:text-5xl">AI Studio<br /><em>for the Open edX® platform</em></h3>
-              <p className="mt-5 max-w-md text-muted-foreground">An AI course authoring tool for instructional designers. Turn one prompt into a complete course with Bloom's-aligned learning objectives and assessments, then export it to the Open edX® platform in one click. Up to 60% faster course development.</p>
-              <div className="mt-8"><ProductLink to="/studio">Explore AI Studio</ProductLink></div>
-            </div>
-          </article>
-        </div>
-      </section>
+      <ProductGridBlock
+        eyebrow="AI products for the Open edX® platform"
+        description="Two tools. One platform. Less manual work."
+        items={[
+          {
+            eyebrow: "01 / LMS administration",
+            title: <>AI Assistant<br /><em>for the Open edX® platform</em></>,
+            description: "A conversational AI assistant embedded in the LMS and Studio of the Open edX® platform. Learners, instructors and administrators manage enrolments, grades, deadlines, certificates and course audits in plain language – every change previewed and confirmed by a human.",
+            imageSrc: assistantImage,
+            imageAlt: "AI learning companion on a smartphone beside a notebook",
+            imageWidth: 1080,
+            imageHeight: 655,
+            href: "/assistant",
+            linkLabel: "Explore the AI Assistant",
+          },
+          {
+            eyebrow: "02 / AI course authoring",
+            title: <>AI Studio<br /><em>for the Open edX® platform</em></>,
+            description: "An AI course authoring tool for instructional designers. Turn one prompt into a complete course with Bloom's-aligned learning objectives and assessments, then export it to the Open edX® platform in one click. Up to 60% faster course development.",
+            imageSrc: studioImage,
+            imageAlt: "AI Studio course creation tools displayed over a laptop",
+            imageWidth: 1323,
+            imageHeight: 800,
+            href: "/studio",
+            linkLabel: "Explore AI Studio",
+          },
+        ]}
+      />
 
       <ImageTextBlock
         eyebrow="About Abstract-Technology"
