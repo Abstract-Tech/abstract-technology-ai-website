@@ -40,7 +40,7 @@ export function SiteHeader() {
           <a href={`${MAIN_SITE}/`} className="nav-link" target="_blank" rel="noopener noreferrer">
             abstract-technology.de <ArrowUpRight className="inline size-3" aria-hidden="true" />
           </a>
-          <Button asChild size="sm" className="site-header-cta ml-2 rounded-none">
+            <Button asChild size="sm" className="site-header-cta ml-2">
             <a href={`${MAIN_SITE}/contact`} target="_blank" rel="noopener noreferrer">Book a demo</a>
           </Button>
         </nav>
@@ -85,7 +85,7 @@ export function PageShell({ children }: { children: ReactNode }) {
 
 export function ProductLink({ to, children }: { to: "/assistant" | "/studio"; children: ReactNode }) {
   return (
-    <Button asChild size="lg" className="w-full h-12 rounded-none px-5 sm:w-auto">
+    <Button asChild size="lg" className="w-full h-12 px-5 sm:w-auto">
       <a href={`${MAIN_SITE}${to === "/assistant" ? "/ai-assistant-openedx" : "/ai-studio-openedx"}`} target="_blank" rel="noopener noreferrer">
         {children}
         <ArrowUpRight aria-hidden="true" />

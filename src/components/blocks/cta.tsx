@@ -20,7 +20,7 @@ export function CtaBlock({ eyebrow = "READY TO GET STARTED?", title, buttonLabel
       <div className="site-shell text-center">
         <BlockHeader eyebrow={eyebrow} />
         <h2 className="cta-block-title mx-auto mt-5">{title}</h2>
-        <Button asChild size="lg" className="mt-8 rounded-none bg-primary text-primary-foreground hover:bg-primary/90">
+        <Button asChild size="lg" className="mt-8 bg-primary text-primary-foreground hover:bg-primary/90">
           <a href={href} target="_blank" rel="noopener noreferrer">{buttonLabel} <ArrowRight aria-hidden="true" /></a>
         </Button>
       </div>

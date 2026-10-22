@@ -24,7 +24,7 @@ export function ExploreBlock({ eyebrow, title, description, buttonLabel, href, b
         <BlockHeader eyebrow={eyebrow}>{title}</BlockHeader>
         <div className="mt-10 flex flex-col gap-8 border-t border-border pt-8 md:flex-row md:items-end md:justify-between md:gap-12">
           <p className="max-w-3xl text-lg leading-relaxed text-muted-foreground">{description}</p>
-          <Button asChild variant="outline" size="lg" className="h-12 w-full shrink-0 rounded-none sm:w-auto">
+          <Button asChild variant="outline" size="lg" className="h-12 w-full shrink-0 sm:w-auto">
             <a href={href} target="_blank" rel="noopener noreferrer">{buttonLabel} <ArrowRight aria-hidden="true" /></a>
           </Button>
         </div>
