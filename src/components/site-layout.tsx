@@ -1,5 +1,6 @@
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { useState } from "react";
+import { Link } from "@tanstack/react-router";
 
 const MAIN_SITE = "https://abstract-technology.de";
 import logo from "@/assets/abstract-technology-logo.png";
@@ -33,8 +34,9 @@ export function SiteHeader() {
           {menuOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
         </button>
         <nav id="site-navigation" aria-label="Primary navigation" className={`site-nav flex flex-wrap items-center gap-1 sm:gap-3${menuOpen ? " is-open" : ""}`}>
-          <a href={`${MAIN_SITE}/ai-assistant-openedx`} target="_blank" rel="noopener noreferrer" className="nav-link">AI Assistant</a>
-          <a href={`${MAIN_SITE}/ai-studio-openedx`} target="_blank" rel="noopener noreferrer" className="nav-link">AI Studio</a>
+          <Link to="/" activeOptions={{ exact: true }} className="nav-link" activeProps={{ className: "nav-link nav-link-active" }}>Home</Link>
+          <Link to="/assistant" className="nav-link" activeProps={{ className: "nav-link nav-link-active" }}>AI Assistant</Link>
+          <Link to="/studio" className="nav-link" activeProps={{ className: "nav-link nav-link-active" }}>AI Studio</Link>
           <a href={`${MAIN_SITE}/`} className="nav-link" target="_blank" rel="noopener noreferrer">
             abstract-technology.de <ArrowUpRight className="inline size-3" aria-hidden="true" />
           </a>
