@@ -69,10 +69,10 @@ function AssistantPage() {
         eyebrow="Overview of the AI Assistant"
         title="Key capabilities at a glance"
         columns={["Who", "Prompt", "What the AI Assistant does"]}
-        groups={[
-          { label: "Learner", cells: [<>Learners<br /><span className="text-xs">Progress, deadlines, certificates, teams and notifications.</span></>, "Real-time responses in simple terminology."] },
-          { label: "Instructors and course authors", cells: [<>Instructors and course authors<br /><span className="text-xs">Enrolments, grades, certificates, discussion activity and course settings.</span></>, "Reads data, carries out confirmed actions and summarises key findings."] },
-          { label: "Admin", cells: [<>Admins<br /><span className="text-xs">Unrestricted access to all courses, users and tools.</span></>, "Acts as a super user and performs supported actions across the entire platform."] },
+        rows={[
+          ["Learners", "Progress, deadlines, certificates, teams and notifications.", "Real-time responses in simple terminology."],
+          ["Instructors and course authors", "Enrolments, grades, certificates, discussion activity and course settings.", "Reads data, carries out confirmed actions and summarises key findings."],
+          ["Admins", "Unrestricted access to all courses, users and tools.", "Acts as a super user and performs supported actions across the entire platform."],
         ]}
       />
 

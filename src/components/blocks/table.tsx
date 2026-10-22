@@ -1,21 +1,17 @@
-import { Fragment, type ReactNode } from "react";
+import type { ReactNode } from "react";
 
 import { BlockHeader } from "@/components/blocks/block-header";
 
-export type TableGroup = {
-  label: ReactNode;
-  cells: ReactNode[];
-};
+export type TableRow = readonly ReactNode[];
 
 type TableBlockProps = {
   eyebrow: ReactNode;
   title: ReactNode;
   columns: ReactNode[];
-  groups: readonly TableGroup[];
-  detailLabel?: ReactNode;
+  rows: readonly TableRow[];
 };
 
-export function TableBlock({ eyebrow, title, columns, groups, detailLabel = "Used by:" }: TableBlockProps) {
+export function TableBlock({ eyebrow, title, columns, rows }: TableBlockProps) {
   return (
     <section className="site-shell py-16 md:py-24">
       <BlockHeader eyebrow={eyebrow}>{title}</BlockHeader>
@@ -25,16 +21,10 @@ export function TableBlock({ eyebrow, title, columns, groups, detailLabel = "Use
             <tr>{columns.map((column, index) => <th key={index} className="py-4 pr-6 font-medium last:pr-0">{column}</th>)}</tr>
           </thead>
           <tbody>
-            {groups.map(({ label, cells }, groupIndex) => (
-              <Fragment key={groupIndex}>
-                <tr>
-                  <th colSpan={columns.length} className="pt-6 pb-3 text-left font-display text-base font-semibold text-accent">{label}</th>
-                </tr>
-                <tr className="border-b border-border last:border-0">
-                  <th className="py-5 pr-6 align-top font-semibold text-muted-foreground">{detailLabel}</th>
-                  {cells.map((cell, index) => <td key={index} className="py-5 pr-6 align-top text-muted-foreground last:pr-0">{cell}</td>)}
-                </tr>
-              </Fragment>
+            {rows.map((row, rowIndex) => (
+              <tr key={rowIndex} className="border-b border-border last:border-0">
+                {row.map((cell, cellIndex) => <td key={cellIndex} className={`py-6 pr-6 align-top text-muted-foreground last:pr-0${cellIndex === 0 ? " font-semibold text-accent" : ""}`}>{cell}</td>)}
+              </tr>
             ))}
           </tbody>
         </table>
