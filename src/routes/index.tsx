@@ -4,6 +4,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import assistantImage from "@/assets/ai-assistant-openedx.webp";
 import studioImage from "@/assets/ai-studio-openedx.webp";
 import partnerImage from "@/assets/open-edx-partner.webp";
+import { ImageTextBlock } from "@/components/blocks/image-text";
 import { SplitHero } from "@/components/heros/split-hero";
 import { pageHead } from "@/lib/seo";
 import { PageShell, ProductLink, ProductNumber } from "@/components/site-layout";
@@ -54,18 +55,19 @@ function Index() {
         </div>
       </section>
 
-      <section className="bg-surface py-16 md:py-24">
-        <div className="site-shell editorial-grid company-grid">
-          <div><ProductNumber>About Abstract-Technology</ProductNumber><img className="partner-image" src={partnerImage} alt="Open edX Partner" width={1080} height={655} /></div>
-          <div>
-            <h2 className="section-title">Technology is abstract.<br /><em>Its value should not be.</em></h2>
-            <div className="mt-10 grid gap-8 border-t border-border pt-8 md:grid-cols-2">
-              <p className="body-large">Abstract-Technology GmbH is a Berlin-based certified partner for the Open edX® platform. We build, host and maintain learning platforms for universities, public institutions, enterprises and NGOs across Europe – and bring that experience to AI for education.</p>
-              <p className="company-detail text-muted-foreground">Our AI products follow the same principles as our learning platforms: hosting on EU servers in Germany, GDPR compliance, your choice of language model – including self-hosted models – and no vendor lock-in. Every AI recommendation is grounded in Bloom's Taxonomy, fully auditable and aligned with the EU AI Act. We build deliberately: one useful product at a time.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ImageTextBlock
+        eyebrow="About Abstract-Technology"
+        title={<>Technology is abstract.<br /><em>Its value should not be.</em></>}
+        imageSrc={partnerImage}
+        imageAlt="Open edX Partner"
+        imageWidth={1080}
+        imageHeight={655}
+        bgVariant="surface"
+        body={<div className="border-t border-border pt-8">
+          <p>Abstract-Technology GmbH is a Berlin-based certified partner for the Open edX® platform. We build, host and maintain learning platforms for universities, public institutions, enterprises and NGOs across Europe – and bring that experience to AI for education.</p>
+          <p className="company-detail mt-8 text-muted-foreground">Our AI products follow the same principles as our learning platforms: hosting on EU servers in Germany, GDPR compliance, your choice of language model – including self-hosted models – and no vendor lock-in. Every AI recommendation is grounded in Bloom's Taxonomy, fully auditable and aligned with the EU AI Act. We build deliberately: one useful product at a time.</p>
+        </div>}
+      />
 
       <section className="site-shell py-16 md:py-24">
         <div className="border-t border-foreground pt-7">
