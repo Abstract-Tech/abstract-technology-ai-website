@@ -3,6 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 
 import studioImage from "@/assets/ai-studio-course-architect.png";
 import assistantPreview from "@/assets/ai-assistant-preview.png";
+import { FaqBlock } from "@/components/blocks/faq";
 import { pageHead } from "@/lib/seo";
 import { PageShell, ProductNumber } from "@/components/site-layout";
 import { Button } from "@/components/ui/button";
@@ -126,29 +127,17 @@ function StudioPage() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-surface py-16 md:py-24">
-        <div className="site-shell">
-          <ProductNumber className="text-accent">FAQ&apos;S</ProductNumber>
-          <div className="mt-6">
-            <h2 className="section-title studio-section-title mb-8">The questions we hear most.</h2>
-            <div className="divide-y divide-border border-y border-border">
-              {[
-                ["What exactly does the AI Studio do?", "It turns a short brief into a complete, structured course outline for Open edX — sections, subsections, units, pacing and basic assessment points — through a short, guided conversation. You review and refine at each step, and when you are happy, one click sends the whole thing into your Open edX Studio."],
-                ["Does the AI write the course for me, or do I keep control?", "You keep control. The AI Studio drafts; you decide. Every step needs your approval before it is added. Nothing is exported or published without you."],
-                ["How does it fit with my existing Open edX setup?", "The Studio installs alongside your Open edX platform and exports finished outlines straight into it as proper course structure. Your existing templates, branding and XBlocks are untouched."],
-                ["Will it replace my course authors?", "No. It removes the slowest part of their work so they can spend more time on content, examples and assessment design."],
-                ["How is it different from the AI Assistant?", "They are siblings. The AI Studio helps you create courses. The AI Assistant helps you run them — enrolments, dates, grades and learner questions."],
-                ["What kinds of courses work best?", "It is strongest on structured, outcome-based learning: onboarding, compliance, soft skills, technical fundamentals, certification preparation and learning and development programmes."],
-              ].map(([question, answer]) => (
-                <details key={question} className="group py-5">
-                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-xl marker:hidden">{question}<span className="text-accent transition-transform group-open:rotate-45">+</span></summary>
-                  <p className="mt-4 max-w-3xl text-muted-foreground">{answer}</p>
-                </details>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <FaqBlock
+        title="The questions we hear most."
+        items={[
+          { question: "What exactly does the AI Studio do?", answer: "It turns a short brief into a complete, structured course outline for Open edX — sections, subsections, units, pacing and basic assessment points — through a short, guided conversation. You review and refine at each step, and when you are happy, one click sends the whole thing into your Open edX Studio." },
+          { question: "Does the AI write the course for me, or do I keep control?", answer: "You keep control. The AI Studio drafts; you decide. Every step needs your approval before it is added. Nothing is exported or published without you." },
+          { question: "How does it fit with my existing Open edX setup?", answer: "The Studio installs alongside your Open edX platform and exports finished outlines straight into it as proper course structure. Your existing templates, branding and XBlocks are untouched." },
+          { question: "Will it replace my course authors?", answer: "No. It removes the slowest part of their work so they can spend more time on content, examples and assessment design." },
+          { question: "How is it different from the AI Assistant?", answer: "They are siblings. The AI Studio helps you create courses. The AI Assistant helps you run them — enrolments, dates, grades and learner questions." },
+          { question: "What kinds of courses work best?", answer: "It is strongest on structured, outcome-based learning: onboarding, compliance, soft skills, technical fundamentals, certification preparation and learning and development programmes." },
+        ]}
+      />
 
     </PageShell>
   );
