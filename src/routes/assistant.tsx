@@ -1,11 +1,11 @@
 import { ArrowDownRight, ArrowRight, Hexagon } from "lucide-react";
 import { createFileRoute } from "@tanstack/react-router";
-import { Fragment } from "react";
 
 import assistantImage from "@/assets/ai-assistant-openedx.webp";
 import { FaqBlock } from "@/components/blocks/faq";
 import { CtaBlock } from "@/components/blocks/cta";
 import { ImageTextBlock } from "@/components/blocks/image-text";
+import { TableBlock } from "@/components/blocks/table";
 import { pageHead } from "@/lib/seo";
 import { PageShell, ProductNumber } from "@/components/site-layout";
 import { Button } from "@/components/ui/button";
@@ -64,10 +64,16 @@ function AssistantPage() {
         body={<>We build intelligent learning platforms, and our AI Assistant is the next step in making Open edX faster, smarter, and easier to manage. This assistant helps you reduce manual work, streamline operations, and interact with your platform in plain language — no complex navigation, no technical barriers. Embedded directly inside the LMS and Studio, the AI Assistant is like a knowledgeable colleague who is always available. It helps you retrieve data, perform actions, and manage your platform in seconds — securely and with full control.</>}
       />
 
-      <section className="site-shell py-16 md:py-24">
-        <ProductNumber className="text-accent">Overview of the AI Assistant</ProductNumber>
-        <div className="mt-6"><h2 className="section-title studio-section-title mb-8">Key capabilities at a glance</h2><div className="overflow-x-auto border-y border-border"><table className="w-full min-w-[42rem] text-left text-sm"><thead className="border-b border-border text-muted-foreground"><tr><th className="py-4 pr-6 font-medium">Who</th><th className="py-4 pr-6 font-medium">Prompt</th><th className="py-4 font-medium">What the AI Assistant does</th></tr></thead><tbody>{[["Learner", "Learners", "Progress, deadlines, certificates, teams and notifications.", "Real-time responses in simple terminology."], ["Instructors and course authors", "Instructors and course authors", "Enrolments, grades, certificates, discussion activity and course settings.", "Reads data, carries out confirmed actions and summarises key findings."], ["Admin", "Admins", "Unrestricted access to all courses, users and tools.", "Acts as a super user and performs supported actions across the entire platform."]].map(([who, usedBy, prompt, result]) => <Fragment key={who}><tr><th colSpan={3} className="pt-6 pb-3 text-left text-base font-semibold text-accent">{who}</th></tr><tr className="border-b border-border last:border-0"><td className="py-5 pr-6 font-semibold text-muted-foreground">Used by:</td><td className="py-5 pr-6 text-muted-foreground">{usedBy}<br /><span className="text-xs">{prompt}</span></td><td className="py-5 text-muted-foreground">{result}</td></tr></Fragment>)}</tbody></table></div></div>
-      </section>
+      <TableBlock
+        eyebrow="Overview of the AI Assistant"
+        title="Key capabilities at a glance"
+        columns={["Who", "Prompt", "What the AI Assistant does"]}
+        groups={[
+          { label: "Learner", cells: [<>Learners<br /><span className="text-xs">Progress, deadlines, certificates, teams and notifications.</span></>, "Real-time responses in simple terminology."] },
+          { label: "Instructors and course authors", cells: [<>Instructors and course authors<br /><span className="text-xs">Enrolments, grades, certificates, discussion activity and course settings.</span></>, "Reads data, carries out confirmed actions and summarises key findings."] },
+          { label: "Admin", cells: [<>Admins<br /><span className="text-xs">Unrestricted access to all courses, users and tools.</span></>, "Acts as a super user and performs supported actions across the entire platform."] },
+        ]}
+      />
 
       <section className="border-y border-border bg-surface py-16 md:py-24"><div className="site-shell"><ProductNumber className="text-accent">The solutions</ProductNumber><div className="mt-6 max-w-4xl"><h2 className="section-title studio-section-title">Built for your infrastructure</h2><p className="body-large mt-8">We build solutions that reduce complexity and give you control. The AI Assistant helps you eliminate repetitive tasks, reduce errors, and speed up every workflow on your platform. Course issues such as missing content, incorrect dates, or empty units are identified instantly. Entire course schedules can be adjusted in seconds, with a full preview before changes are applied. User management tasks can be completed in a single request. The result is a platform that is easier to manage, more intelligent, and efficient for everyone involved.</p></div></div></section>
 
