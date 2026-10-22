@@ -1,9 +1,10 @@
-import { ArrowDownRight, ArrowRight, Hexagon } from "lucide-react";
+import { ArrowDownRight, ArrowRight } from "lucide-react";
 import { createFileRoute } from "@tanstack/react-router";
 
 import assistantImage from "@/assets/ai-assistant-openedx.webp";
 import { FaqBlock } from "@/components/blocks/faq";
 import { CtaBlock } from "@/components/blocks/cta";
+import { FeaturedGridBlock } from "@/components/blocks/featured-grid";
 import { ImageTextBlock } from "@/components/blocks/image-text";
 import { TableBlock } from "@/components/blocks/table";
 import { TextBlock } from "@/components/blocks/text";
@@ -78,7 +79,7 @@ function AssistantPage() {
 
       <TextBlock eyebrow="The solutions" title="Built for your infrastructure">We build solutions that reduce complexity and give you control. The AI Assistant helps you eliminate repetitive tasks, reduce errors, and speed up every workflow on your platform. Course issues such as missing content, incorrect dates, or empty units are identified instantly. Entire course schedules can be adjusted in seconds, with a full preview before changes are applied. User management tasks can be completed in a single request. The result is a platform that is easier to manage, more intelligent, and efficient for everyone involved.</TextBlock>
 
-      <section className="site-shell py-16 md:py-24"><ProductNumber className="text-accent">Capabilities</ProductNumber><div className="mt-6"><h2 className="assistant-capabilities-title mb-8">A growing toolbox, not a fixed feature.</h2><div className="grid gap-4 md:grid-cols-3">{capabilities.map(([title, copy]) => <article key={title} className="rounded-xl border border-border bg-muted p-5"><div className="mb-5 flex size-8 items-center justify-center rounded-md bg-accent/10 text-accent"><Hexagon className="size-5" strokeWidth={1.75} aria-hidden="true" /></div><h3 className="font-display text-xl">{title}</h3><p className="mt-2 text-sm text-muted-foreground">{copy}</p></article>)}</div></div></section>
+      <FeaturedGridBlock eyebrow="Capabilities" title="A growing toolbox, not a fixed feature." items={capabilities.map(([title, description]) => ({ title, description }))} />
 
       <section className="border-y border-border bg-surface py-16 md:py-24"><div className="site-shell"><ProductNumber className="text-accent">Security &amp; control</ProductNumber><div className="mt-6 grid gap-8 md:grid-cols-[minmax(14rem,.5fr)_minmax(0,1fr)] md:items-start"><figure className="editorial-image"><img src={assistantImage} alt="AI Assistant interface on a smartphone" width={1080} height={655} loading="lazy" /><figcaption>Powerful by default</figcaption></figure><div><h2 className="section-title studio-section-title">Powerful by default. Reversible by design.</h2><div className="mt-8 grid gap-6 md:grid-cols-3">{[["Human-in-the-loop for every step", "Destructive or bulk actions require explicit confirmation. No accidental enrolments, results or certificates."], ["Your data stays in your tenant", "Actions stay inside your environment and are logged so you can trace what happened and why."], ["Your choice of LLM", "Avoid vendor lock-in with your choice of language model, including self-hosted models."]].map(([title, copy]) => <div key={title}><h3 className="font-display text-xl">{title}</h3><p className="mt-2 text-sm text-muted-foreground">{copy}</p></div>)}</div></div></div></div></section>
 
