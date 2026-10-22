@@ -1,9 +1,10 @@
-import { ArrowDownRight, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { createFileRoute } from "@tanstack/react-router";
 
 import assistantImage from "@/assets/ai-assistant-openedx.webp";
 import studioImage from "@/assets/ai-studio-openedx.webp";
 import partnerImage from "@/assets/open-edx-partner.webp";
+import { SplitHero } from "@/components/heros/split-hero";
 import { pageHead } from "@/lib/seo";
 import { PageShell, ProductLink, ProductNumber } from "@/components/site-layout";
 import { Button } from "@/components/ui/button";
@@ -16,24 +17,13 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <PageShell>
-      <section className="site-shell home-hero">
-        <div className="reveal">
-          <ProductNumber>Abstract-Technology GmbH / AI for the Open edX® platform</ProductNumber>
-          <h1 className="home-title mt-8">We make AI<br /><em>useful.</em></h1>
-          <p className="max-w-2xl text-lg leading-relaxed text-muted-foreground">
-            Explainable, GDPR-compliant AI for the Open edX® platform – for LMS administration and AI course authoring, built and hosted in Europe.
-          </p>
-        </div>
-        <div className="hero-aside reveal reveal-delay">
-          <p className="max-w-md text-lg leading-relaxed text-muted-foreground">
-            Abstract-Technology builds focused AI products for the Open edX® platform: the <strong className="text-foreground">AI Assistant</strong>, which manages your learning platform through natural-language conversation, and <strong className="text-foreground">AI Studio</strong>, which turns a single prompt into a complete online course. Hosted on EU servers, aligned with the EU AI Act.
-          </p>
-          <a href="https://abstract-technology.de/about" target="_blank" rel="noopener noreferrer" className="mt-6 inline-block text-sm font-semibold underline underline-offset-4 hover:text-primary">
-            By Abstract-Technology, certified partner for the Open edX® platform in Europe
-          </a>
-          <ArrowDownRight className="mt-10 size-9 text-accent" aria-hidden="true" />
-        </div>
-      </section>
+      <SplitHero
+        eyebrow="Abstract-Technology GmbH / AI for the Open edX® platform"
+        title={<>We make AI<br /><em>useful.</em></>}
+        description="Explainable, GDPR-compliant AI for the Open edX® platform – for LMS administration and AI course authoring, built and hosted in Europe."
+        aside={<>Abstract-Technology builds focused AI products for the Open edX® platform: the <strong className="text-foreground">AI Assistant</strong>, which manages your learning platform through natural-language conversation, and <strong className="text-foreground">AI Studio</strong>, which turns a single prompt into a complete online course. Hosted on EU servers, aligned with the EU AI Act.</>}
+        asideLink={{ label: "By Abstract-Technology, certified partner for the Open edX® platform in Europe", href: "https://abstract-technology.de/about", external: true }}
+      />
 
       <section className="border-y border-border" aria-labelledby="products-title">
         <div className="site-shell py-5">
