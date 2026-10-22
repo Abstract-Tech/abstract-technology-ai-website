@@ -1,4 +1,3 @@
-import { ArrowRight } from "lucide-react";
 import { createFileRoute } from "@tanstack/react-router";
 
 import assistantImage from "@/assets/ai-assistant-openedx.webp";
@@ -6,12 +5,12 @@ import { FaqBlock } from "@/components/blocks/faq";
 import { CtaBlock } from "@/components/blocks/cta";
 import { FeaturedGridBlock } from "@/components/blocks/featured-grid";
 import { ImageTextBlock } from "@/components/blocks/image-text";
+import { ExploreBlock } from "@/components/blocks/explore";
 import { TableBlock } from "@/components/blocks/table";
 import { TextBlock } from "@/components/blocks/text";
 import { ProductHero } from "@/components/heros/product-hero";
 import { pageHead } from "@/lib/seo";
 import { PageShell, ProductNumber } from "@/components/site-layout";
-import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/assistant")({
   head: () => pageHead("/assistant"),
@@ -94,7 +93,14 @@ function AssistantPage() {
 
       <CtaBlock title="Test the AI Assistant in a real environment and explore how it fits your use case." />
 
-      <section className="border-y border-border bg-surface py-16 md:py-24"><div className="site-shell"><ProductNumber className="text-accent">AI Studio for Open edX</ProductNumber><div className="mt-6 grid gap-8 md:grid-cols-[1fr_auto] md:items-center"><div><h2 className="section-title studio-section-title">The AI Assistant helps you run Open edX.</h2><p className="body-large mt-6 max-w-2xl">AI Studio helps you create courses; the AI Assistant helps learners, instructors and administrators manage them day to day.</p></div><Button asChild variant="outline" size="lg" className="rounded-none"><a href="https://abstract-technology.de/ai-studio-openedx" target="_blank" rel="noopener noreferrer">See AI Studio <ArrowRight aria-hidden="true" /></a></Button></div></div></section>
+      <ExploreBlock
+        eyebrow="AI Studio for Open edX"
+        title="The AI Assistant helps you run Open edX."
+        description="AI Studio helps you create courses; the AI Assistant helps learners, instructors and administrators manage them day to day."
+        buttonLabel="See AI Studio"
+        href="https://abstract-technology.de/ai-studio-openedx"
+        bgVariant="surface"
+      />
 
       <FaqBlock title="Questions we get on discovery calls." items={faqs.map(([question, answer]) => ({ question, answer }))} />
     </PageShell>

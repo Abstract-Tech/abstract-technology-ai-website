@@ -1,15 +1,14 @@
-import { ArrowRight } from "lucide-react";
 import { createFileRoute } from "@tanstack/react-router";
 
 import assistantImage from "@/assets/ai-assistant-openedx.webp";
 import studioImage from "@/assets/ai-studio-openedx.webp";
 import partnerImage from "@/assets/open-edx-partner.webp";
 import { ImageTextBlock } from "@/components/blocks/image-text";
+import { ExploreBlock } from "@/components/blocks/explore";
 import { ProductGridBlock } from "@/components/blocks/product-grid";
 import { SplitHero } from "@/components/heros/split-hero";
 import { pageHead } from "@/lib/seo";
-import { PageShell, ProductNumber } from "@/components/site-layout";
-import { Button } from "@/components/ui/button";
+import { PageShell } from "@/components/site-layout";
 
 export const Route = createFileRoute("/")({
   head: () => pageHead("/"),
@@ -70,17 +69,13 @@ function Index() {
         </div>}
       />
 
-      <section className="site-shell py-16 md:py-24">
-        <div className="border-t border-foreground pt-7">
-            <ProductNumber>Start exploring</ProductNumber>
-          <div className="mt-8 flex flex-col gap-7 md:flex-row md:items-end md:justify-between">
-            <div className="max-w-3xl"><h2 className="font-display text-4xl leading-[1] md:text-6xl">Two starting points for AI on the Open edX® platform.</h2><p className="mt-5 text-muted-foreground">See the AI Assistant and AI Studio live in a 45-minute demo – no sales deck, just the Abstract-Technology architects who build and run the Open edX® platform every day.</p></div>
-            <Button asChild variant="outline" size="lg" className="w-full h-12 shrink-0 rounded-none sm:w-auto">
-              <a href="https://abstract-technology.de/contact" target="_blank" rel="noopener noreferrer">Book a live demo <ArrowRight aria-hidden="true" /></a>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <ExploreBlock
+        eyebrow="Start exploring"
+        title="Two starting points for AI on the Open edX® platform."
+        description="See the AI Assistant and AI Studio live in a 45-minute demo – no sales deck, just the Abstract-Technology architects who build and run the Open edX® platform every day."
+        buttonLabel="Book a live demo"
+        href="https://abstract-technology.de/contact"
+      />
     </PageShell>
   );
 }
