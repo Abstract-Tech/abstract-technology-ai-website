@@ -6,6 +6,7 @@ import assistantPreview from "@/assets/ai-assistant-preview.png";
 import { FaqBlock } from "@/components/blocks/faq";
 import { CtaBlock } from "@/components/blocks/cta";
 import { ImageTextBlock } from "@/components/blocks/image-text";
+import { MediaFeatureBlock } from "@/components/blocks/media-feature";
 import { TableBlock } from "@/components/blocks/table";
 import { ProductHero } from "@/components/heros/product-hero";
 import { pageHead } from "@/lib/seo";
@@ -29,41 +30,25 @@ function StudioPage() {
         videoCaption="The Abstract-Technology AI Studio for your Open edX® platform"
       />
 
-      <section className="border-y border-border bg-surface py-14 md:py-20">
-        <div className="site-shell">
-          <ProductNumber className="text-accent">AI Studio</ProductNumber>
-          <div className="mt-6 grid gap-8 md:grid-cols-[minmax(14rem,.8fr)_minmax(0,1.2fr)]">
-            <figure className="editorial-image">
-              <img src={studioImage} alt="AI Studio course authoring tools displayed over a laptop" width={1323} height={800} loading="lazy" />
-              <figcaption>AI Studio course architect</figcaption>
-            </figure>
-            <div>
-              <h2 className="section-title studio-section-title">Course creation, reimagined!</h2>
-              <p className="body-large mt-8">
-                Planning a course used to mean weeks of outlining, restructuring and manual set-up. The AI Studio turns that process into a streamlined experience that takes only minutes. You start with a simple idea or prompt. The AI Studio guides you through a conversational planning process, helping you define your audience, learning outcomes and pacing. From there it builds the course structure for you, so you can spend your time on what matters: the content and the learners.
-              </p>
-              <Button asChild variant="outline" size="lg" className="mt-8 rounded-none">
-                <a href="https://abstract-technology.de/contact" target="_blank" rel="noopener noreferrer">Schedule a live demo <ArrowRight aria-hidden="true" /></a>
-              </Button>
-            </div>
-            <div className="grid gap-x-8 gap-y-6 border-t border-border pt-8 md:col-span-2 md:grid-cols-3">
-              {[
-                ["Conversational planning", "No blank page and no complicated forms. Describe what you want to teach and the AI Studio asks the right questions."],
-                ["Complete course outlines", "Sections, subsections and units are generated automatically, giving you a solid structure to work from."],
-                ["Instructors stay in charge", "Human-in-the-loop confirmation steps mean nothing is finalised without your approval."],
-                ["Built-in validation", "Automatic scans flag structural issues and empty units before they reach your learners."],
-                ["One-click export", "Finished courses go straight into Open edX Studio, ready for you to review, extend and publish."],
-                ["Who it is for", "Course authors and instructors, learning and development teams, and platform administrators."],
-              ].map(([title, copy]) => (
-                <div key={title}>
-                  <h3 className="font-display text-xl">{title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">{copy}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <MediaFeatureBlock
+        eyebrow="AI Studio"
+        title="Course creation, reimagined!"
+        body="Planning a course used to mean weeks of outlining, restructuring and manual set-up. The AI Studio turns that process into a streamlined experience that takes only minutes. You start with a simple idea or prompt. The AI Studio guides you through a conversational planning process, helping you define your audience, learning outcomes and pacing. From there it builds the course structure for you, so you can spend your time on what matters: the content and the learners."
+        imageSrc={studioImage}
+        imageAlt="AI Studio course authoring tools displayed over a laptop"
+        imageWidth={1323}
+        imageHeight={800}
+        caption="AI Studio course architect"
+        cta={{ label: "Schedule a live demo", href: "https://abstract-technology.de/contact", external: true }}
+        features={[
+          { title: "Conversational planning", description: "No blank page and no complicated forms. Describe what you want to teach and the AI Studio asks the right questions." },
+          { title: "Complete course outlines", description: "Sections, subsections and units are generated automatically, giving you a solid structure to work from." },
+          { title: "Instructors stay in charge", description: "Human-in-the-loop confirmation steps mean nothing is finalised without your approval." },
+          { title: "Built-in validation", description: "Automatic scans flag structural issues and empty units before they reach your learners." },
+          { title: "One-click export", description: "Finished courses go straight into Open edX Studio, ready for you to review, extend and publish." },
+          { title: "Who it is for", description: "Course authors and instructors, learning and development teams, and platform administrators." },
+        ]}
+      />
 
       <TableBlock
         eyebrow="Overview of the AI Studio"
