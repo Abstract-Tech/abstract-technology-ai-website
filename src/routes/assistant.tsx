@@ -81,7 +81,20 @@ function AssistantPage() {
 
       <FeaturedGridBlock eyebrow="Capabilities" title="A growing toolbox, not a fixed feature." items={capabilities.map(([title, description]) => ({ title, description }))} />
 
-      <section className="border-y border-border bg-surface py-16 md:py-24"><div className="site-shell"><ProductNumber className="text-accent">Security &amp; control</ProductNumber><div className="mt-6 grid gap-8 md:grid-cols-[minmax(14rem,.5fr)_minmax(0,1fr)] md:items-start"><figure className="editorial-image"><img src={assistantImage} alt="AI Assistant interface on a smartphone" width={1080} height={655} loading="lazy" /><figcaption>Powerful by default</figcaption></figure><div><h2 className="section-title studio-section-title">Powerful by default. Reversible by design.</h2><div className="mt-8 grid gap-6 md:grid-cols-3">{[["Human-in-the-loop for every step", "Destructive or bulk actions require explicit confirmation. No accidental enrolments, results or certificates."], ["Your data stays in your tenant", "Actions stay inside your environment and are logged so you can trace what happened and why."], ["Your choice of LLM", "Avoid vendor lock-in with your choice of language model, including self-hosted models."]].map(([title, copy]) => <div key={title}><h3 className="font-display text-xl">{title}</h3><p className="mt-2 text-sm text-muted-foreground">{copy}</p></div>)}</div></div></div></div></section>
+      <ImageTextBlock
+        eyebrow="Security & control"
+        title="Powerful by default. Reversible by design."
+        imageSrc={assistantImage}
+        imageAlt="AI Assistant interface on a smartphone"
+        imageWidth={1080}
+        imageHeight={655}
+        caption="Powerful by default"
+        items={[
+          { title: "Human-in-the-loop for every step", description: "Destructive or bulk actions require explicit confirmation. No accidental enrolments, results or certificates." },
+          { title: "Your data stays in your tenant", description: "Actions stay inside your environment and are logged so you can trace what happened and why." },
+          { title: "Your choice of LLM", description: "Avoid vendor lock-in with your choice of language model, including self-hosted models." },
+        ]}
+      />
 
       <CtaBlock title="Test the AI Assistant in a real environment and explore how it fits your use case." />
 
