@@ -1,5 +1,6 @@
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { useState } from "react";
+import { Link } from "@tanstack/react-router";
 
 const MAIN_SITE = "https://abstract-technology.de";
 import logo from "@/assets/abstract-technology-logo.png";
@@ -33,12 +34,13 @@ export function SiteHeader() {
           {menuOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
         </button>
         <nav id="site-navigation" aria-label="Primary navigation" className={`site-nav flex flex-wrap items-center gap-1 sm:gap-3${menuOpen ? " is-open" : ""}`}>
-          <a href={`${MAIN_SITE}/ai-assistant-openedx`} target="_blank" rel="noopener noreferrer" className="nav-link">AI Assistant</a>
-          <a href={`${MAIN_SITE}/ai-studio-openedx`} target="_blank" rel="noopener noreferrer" className="nav-link">AI Studio</a>
+          <Link to="/" activeOptions={{ exact: true }} className="nav-link" activeProps={{ className: "nav-link nav-link-active" }}>Home</Link>
+          <Link to="/ai-assistant" className="nav-link" activeProps={{ className: "nav-link nav-link-active" }}>AI Assistant</Link>
+          <Link to="/ai-studio" className="nav-link" activeProps={{ className: "nav-link nav-link-active" }}>AI Studio</Link>
           <a href={`${MAIN_SITE}/`} className="nav-link" target="_blank" rel="noopener noreferrer">
             abstract-technology.de <ArrowUpRight className="inline size-3" aria-hidden="true" />
           </a>
-          <Button asChild size="sm" className="site-header-cta ml-2 rounded-none">
+            <Button asChild size="sm" className="site-header-cta ml-2">
             <a href={`${MAIN_SITE}/contact`} target="_blank" rel="noopener noreferrer">Book a demo</a>
           </Button>
         </nav>
@@ -50,16 +52,16 @@ export function SiteHeader() {
 export function SiteFooter() {
   return (
     <footer className="border-t border-border bg-surface text-foreground">
-      <div className="site-shell grid gap-10 py-12 md:grid-cols-[1fr_auto] md:items-end">
-        <div>
+      <div className="site-shell grid gap-10 py-12 md:grid-cols-1 lg:grid-cols-[minmax(18rem,1fr)_minmax(0,2fr)] lg:items-end">
+        <div className="min-w-0">
           <BrandMark />
-          <p className="mt-3 max-w-md text-sm text-muted-foreground">
+          <p className="mt-3 max-w-md text-sm leading-relaxed text-muted-foreground">
             Explainable, EU-hosted AI for the Open edX® platform – by Abstract-Technology GmbH, Berlin, Germany.
           </p>
         </div>
-        <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
-          <a href={`${MAIN_SITE}/ai-assistant-openedx`} className="footer-link" target="_blank" rel="noopener noreferrer">AI Assistant</a>
-          <a href={`${MAIN_SITE}/ai-studio-openedx`} className="footer-link" target="_blank" rel="noopener noreferrer">AI Studio</a>
+        <div className="flex min-w-0 flex-wrap gap-x-6 gap-y-2 text-sm md:justify-start lg:justify-end">
+          <Link to="/ai-assistant" className="footer-link">AI Assistant</Link>
+          <Link to="/ai-studio" className="footer-link">AI Studio</Link>
           <a href={`${MAIN_SITE}/`} className="footer-link" target="_blank" rel="noopener noreferrer">abstract-technology.de</a>
           <a href={`${MAIN_SITE}/contact`} className="footer-link" target="_blank" rel="noopener noreferrer">Contact</a>
           <a href={`${MAIN_SITE}/imprint`} className="footer-link" target="_blank" rel="noopener noreferrer">Imprint</a>
@@ -81,10 +83,10 @@ export function PageShell({ children }: { children: ReactNode }) {
   );
 }
 
-export function ProductLink({ to, children }: { to: "/assistant" | "/studio"; children: ReactNode }) {
+export function ProductLink({ to, children }: { to: "/ai-assistant" | "/ai-studio"; children: ReactNode }) {
   return (
-    <Button asChild size="lg" className="w-full h-12 rounded-none px-5 sm:w-auto">
-      <a href={`${MAIN_SITE}${to === "/assistant" ? "/ai-assistant-openedx" : "/ai-studio-openedx"}`} target="_blank" rel="noopener noreferrer">
+    <Button asChild size="lg" className="w-full h-12 px-5 sm:w-auto">
+      <a href={`${MAIN_SITE}${to === "/ai-assistant" ? "/ai-assistant-openedx" : "/ai-studio-openedx"}`} target="_blank" rel="noopener noreferrer">
         {children}
         <ArrowUpRight aria-hidden="true" />
       </a>
@@ -92,6 +94,6 @@ export function ProductLink({ to, children }: { to: "/assistant" | "/studio"; ch
   );
 }
 
-export function ProductNumber({ children }: { children: ReactNode }) {
-  return <span className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">{children}</span>;
+export function ProductNumber({ children, className }: { children: ReactNode; className?: string }) {
+  return <span className={`product-number text-xs font-semibold uppercase tracking-[0.16em] text-primary ${className ?? ""}`}>{children}</span>;
 }
