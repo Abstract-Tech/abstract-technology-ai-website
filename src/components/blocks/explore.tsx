@@ -19,7 +19,7 @@ type ExploreBlockProps = {
 
 export function ExploreBlock({ eyebrow, title, description, buttonLabel, href, bgVariant = "default", className }: ExploreBlockProps) {
   return (
-    <MotionSection animation="slide-left" className={cn("border-y border-border py-16 md:py-24", backgroundVariants[bgVariant], className)}>
+    <MotionSection animation="fade" className={cn("border-y border-border py-16 md:py-24", backgroundVariants[bgVariant], className)}>
       <div className="site-shell">
         <BlockHeader eyebrow={eyebrow}>{title}</BlockHeader>
         <div className="mt-10 flex flex-col gap-8 border-t border-border pt-8 md:flex-row md:items-end md:justify-between md:gap-12">

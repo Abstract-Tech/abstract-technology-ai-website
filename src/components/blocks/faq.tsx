@@ -23,7 +23,7 @@ export function FaqBlock({ eyebrow = "FAQ'S", title, items, bgVariant = "default
   const [openItems, setOpenItems] = useState<Record<string, boolean>>({});
 
   return (
-    <MotionSection animation="slide-left" className={cn("border-y border-border py-16 md:py-24", backgroundVariants[bgVariant])}>
+    <MotionSection animation="fade" className={cn("border-y border-border py-16 md:py-24", backgroundVariants[bgVariant])}>
       <div className="site-shell">
         <BlockHeader eyebrow={eyebrow}>
           {title}

@@ -16,7 +16,7 @@ type CtaBlockProps = {
 
 export function CtaBlock({ eyebrow = "READY TO GET STARTED?", title, buttonLabel = "Schedule a live demo", href = "https://abstract-technology.de/contact", bgVariant = "default" }: CtaBlockProps) {
   return (
-    <MotionSection animation="rise" className={cn("border-y border-border py-16 md:py-20", backgroundVariants[bgVariant])}>
+    <MotionSection animation="fade" className={cn("border-y border-border py-16 md:py-20", backgroundVariants[bgVariant])}>
       <div className="site-shell text-center">
         <BlockHeader eyebrow={eyebrow} />
         <h2 className="cta-block-title mx-auto mt-5">{title}</h2>
