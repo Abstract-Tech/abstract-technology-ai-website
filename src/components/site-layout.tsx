@@ -86,10 +86,10 @@ export function PageShell({ children }: { children: ReactNode }) {
 export function ProductLink({ to, children }: { to: "/ai-assistant" | "/ai-studio"; children: ReactNode }) {
   return (
     <Button asChild size="lg" className="w-full h-12 px-5 sm:w-auto">
-      <a href={`${MAIN_SITE}${to === "/ai-assistant" ? "/ai-assistant-openedx" : "/ai-studio-openedx"}`} target="_blank" rel="noopener noreferrer">
+      <Link to={to}>
         {children}
         <ArrowUpRight aria-hidden="true" />
-      </a>
+      </Link>
     </Button>
   );
 }

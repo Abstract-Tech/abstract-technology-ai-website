@@ -22,7 +22,7 @@ type FeaturedGridBlockProps = {
 
 export function FeaturedGridBlock({ eyebrow, title, items, className, bgVariant = "default" }: FeaturedGridBlockProps) {
   return (
-    <MotionSection animation="scale" className={cn("py-16 md:py-24", backgroundVariants[bgVariant], className)}>
+    <MotionSection animation="fade" className={cn("py-16 md:py-24", backgroundVariants[bgVariant], className)}>
       <div className="site-shell">
         <BlockHeader eyebrow={eyebrow} titleClassName="max-w-none">{title}</BlockHeader>
         <div className="mt-8 grid gap-4 md:grid-cols-3">

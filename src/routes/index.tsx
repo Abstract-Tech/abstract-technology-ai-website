@@ -59,7 +59,7 @@ function Index() {
               <>
                 AI Assistant
                 <br />
-                <em>for the Open edX® platform</em>
+                for the Open edX® platform
               </>
             ),
             description:
@@ -78,7 +78,7 @@ function Index() {
               <>
                 AI Studio
                 <br />
-                <em>for the Open edX® platform</em>
+                for the Open edX® platform
               </>
             ),
             description:
@@ -100,7 +100,7 @@ function Index() {
           <>
             Technology is abstract.
             <br />
-            <em>Its value should not be.</em>
+            Its value should not be.
           </>
         }
         imageSrc={partnerImage}

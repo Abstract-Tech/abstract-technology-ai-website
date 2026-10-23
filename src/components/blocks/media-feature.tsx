@@ -29,7 +29,7 @@ type MediaFeatureBlockProps = {
 
 export function MediaFeatureBlock({ eyebrow, title, body, imageSrc, imageAlt, imageWidth, imageHeight, caption, features, cta, bgVariant = "default", className }: MediaFeatureBlockProps) {
   return (
-    <MotionSection animation="slide-right" className={cn("border-y border-border py-14 md:py-20", backgroundVariants[bgVariant], className)}>
+    <MotionSection animation="fade" className={cn("border-y border-border py-14 md:py-20", backgroundVariants[bgVariant], className)}>
       <div className="site-shell">
         <div className="mt-6 grid gap-8 md:grid-cols-[minmax(14rem,.8fr)_minmax(0,1.2fr)] md:items-start">
           <figure className="editorial-image">
