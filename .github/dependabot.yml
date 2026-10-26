@@ -1,0 +1,11 @@
+version: 2
+updates:
+  - package-ecosystem: "npm" # pnpm-lock.yaml is covered by the npm ecosystem
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    groups:
+      minor-and-patch:
+        update-types:
+          - "minor"
+          - "patch"
